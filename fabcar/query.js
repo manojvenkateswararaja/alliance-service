@@ -1,9 +1,9 @@
 'use strict';
 /*
-* Copyright IBM Corp All Rights Reserved
-*
-* SPDX-License-Identifier: Apache-2.0
-*/
+ * Copyright IBM Corp All Rights Reserved
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
 /*
  * Hyperledger Fabric Sample Query Program
  */
@@ -15,14 +15,15 @@ var options = {
     wallet_path: path.join(__dirname, './creds'),
     user_id: 'PeerAdmin',
     channel_id: 'mychannel',
-    chaincode_id: 'fabcar',
+    chaincode_id: 'commercialInsurance',
     network_url: 'grpc://localhost:7051',
 };
 
 var channel = {};
 var client = null;
-
-Promise.resolve().then(() => {
+function fetchClaimlist(params) {
+    console.log(params, 'data in params for query method')
+return Promise.resolve().then(() => {
     console.log("Create a client and set the wallet location");
     client = new hfc();
     return hfc.newDefaultKeyValueStore({ path: options.wallet_path });
@@ -40,6 +41,7 @@ Promise.resolve().then(() => {
     return;
 }).then(() => {
     console.log("Make query");
+    var getclaims = params.getclaims;
     var transaction_id = client.newTransactionID();
     console.log("Assigning transaction_id: ", transaction_id._transaction_id);
 
@@ -48,8 +50,8 @@ Promise.resolve().then(() => {
     const request = {
         chaincodeId: options.chaincode_id,
         txId: transaction_id,
-        fcn: 'queryAllCars',
-        args: ['']
+        fcn: 'read',
+        args: [getclaims]
     };
     return channel.queryByChaincode(request);
 }).then((query_responses) => {
@@ -63,6 +65,14 @@ Promise.resolve().then(() => {
         console.error("error from query = ", query_responses[0]);
     }
     console.log("Response is ", query_responses[0].toString());
+    return JSON.parse(query_responses[0].toString());
 }).catch((err) => {
     console.error("Caught Error", err);
 });
+}
+
+module.exports = {
+
+    fetchClaimlist: fetchClaimlist,
+    
+};

@@ -1,0 +1,826 @@
+[32m[2017-07-18 10:14:37.330] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:14:37.331] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:14:37.331] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 10:14:37 GMT+0530 (IST) <<<
+[32m[2017-07-18 10:14:37.332] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:14:37.332] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 10:14:37.332] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 10:14:37.332] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 10:14:37.333] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:14:37.333] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 10:14:37.334] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 10:14:37.334] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 10:14:37.334] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 10:14:37.351] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 10:14:37.351] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 10:14:37.351] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 10:14:37.352] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 10:14:38.127] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 10:14:38.139] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 10:14:38.139] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 10:14:38.141] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 10:14:38.142] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 10:14:38.148] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 10:14:38.150] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 10:14:38.286] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 10:14:38.295] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:14:38.296] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 10:14:38.476] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 10:14:38.495] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 10:14:38.497] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 10:14:38.498] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 10:14:38.505] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:14:38.507] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 10:14:38.685] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 10:14:38.699] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 10:14:38.701] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 10:14:38.710] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 10:14:38.711] [INFO] console - [39mserver is running on8082
+[31m[2017-07-18 10:16:38.364] [ERROR] console - [39mReferenceError: fetchClaimlist is not defined
+    at router.get (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/routes.js:279:5)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:317:13)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:185:7)
+    at /home/rapidqube/nodemockups/node_modules/cors/lib/index.js:221:17
+    at originCallback (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:211:15)
+    at /home/rapidqube/nodemockups/node_modules/cors/lib/index.js:216:13
+    at optionsCallback (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:196:9)
+    at corsMiddleware (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:201:7)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+[31m[2017-07-18 10:17:10.706] [ERROR] console - [39mSyntaxError: Unexpected token e
+    at parse (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/read.js:116:18
+    at invokeCallback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:262:16)
+    at done (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:251:7)
+    at IncomingMessage.onEnd (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:307:7)
+    at emitNone (events.js:86:13)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-07-18 10:17:36.583] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:17:36.585] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:17:36.585] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 10:17:36 GMT+0530 (IST) <<<
+[32m[2017-07-18 10:17:36.586] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:17:36.586] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 10:17:36.587] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 10:17:36.587] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 10:17:36.587] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:17:36.587] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 10:17:36.588] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 10:17:36.588] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 10:17:36.588] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 10:17:36.596] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 10:17:36.596] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 10:17:36.597] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 10:17:36.597] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 10:17:37.378] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 10:17:37.387] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 10:17:37.388] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 10:17:37.388] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 10:17:37.388] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 10:17:37.391] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 10:17:37.391] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 10:17:37.458] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 10:17:37.464] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:17:37.464] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 10:17:37.645] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 10:17:37.664] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 10:17:37.666] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 10:17:37.666] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 10:17:37.672] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:17:37.674] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 10:17:37.863] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 10:17:37.878] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 10:17:37.880] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 10:17:37.886] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 10:17:37.887] [INFO] console - [39mserver is running on8082
+[31m[2017-07-18 10:17:39.339] [ERROR] console - [39mSyntaxError: Unexpected token e
+    at parse (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/read.js:116:18
+    at invokeCallback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:262:16)
+    at done (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:251:7)
+    at IncomingMessage.onEnd (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:307:7)
+    at emitNone (events.js:86:13)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-07-18 10:17:41.120] [INFO] console - [39m{ user: 'risabh.s', getclaims: 'getclaims' } 'data in params for query method'
+[34m[2017-07-18 10:17:41.121] [TRACE] blockchain_sdk - [39mfetch claim details : entry 
+[34m[2017-07-18 10:17:41.121] [TRACE] blockchain_sdk - [39mfetch claim details : params - {"user":"risabh.s","getclaims":"getclaims"} 
+[34m[2017-07-18 10:17:41.122] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:17:41.123] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-07-18 10:17:46.780] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:17:46.781] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:17:46.784] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:17:48.786] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 0 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:17:48.787] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:17:48.787] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-07-18 10:17:49.376] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:17:49.376] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:17:49.376] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:17:51.377] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 1 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:17:51.378] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:17:51.378] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":2} 
+[32m[2017-07-18 10:17:51.951] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:17:51.952] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:17:51.952] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:17:53.953] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 2 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:17:53.954] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:17:53.954] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":3} 
+[32m[2017-07-18 10:17:54.511] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:17:54.517] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:17:54.519] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:17:56.520] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 3 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:17:56.521] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:17:56.529] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":4} 
+[32m[2017-07-18 10:17:57.042] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:17:57.043] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:17:57.046] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:17:59.048] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 4 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:17:59.049] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:17:59.050] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":5} 
+[32m[2017-07-18 10:17:59.569] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:17:59.569] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:17:59.570] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:18:01.571] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 5 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:18:01.572] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:18:01.572] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":6} 
+[32m[2017-07-18 10:18:02.152] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:18:02.153] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:18:02.154] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:18:02.154] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retries Exhausted - {"statusCode":500,"body":"Could not parse query response "}
+[31m[2017-07-18 10:18:02.156] [ERROR] blockchain_sdk - [39mgetclaims : Could not fetch user details - {"statusCode":500,"body":"Could not parse query response "}
+[33m[2017-07-18 10:18:02.160] [WARN] console - [39m[31mUnhandled rejection ReferenceError: conslole is not defined
+    at bcSdk.fetchClaimlist.then.catch.err (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/functions/fetchClaimlist.js:25:5)
+    at tryCatcher (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/util.js:16:23)
+    at Promise._settlePromiseFromHandler (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/promise.js:512:31)
+    at Promise._settlePromise (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/promise.js:569:18)
+    at Promise._settlePromise0 (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/promise.js:614:10)
+    at Promise._settlePromises (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/promise.js:689:18)
+    at Async._drainQueue (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/async.js:133:16)
+    at Async._drainQueues (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/async.js:143:10)
+    at Immediate.Async.drainQueues (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/bluebird/js/release/async.js:17:14)
+    at runCallback (timers.js:672:20)
+    at tryOnImmediate (timers.js:645:5)
+    at processImmediate [as _immediateCallback] (timers.js:617:5)[0m
+
+[31m[2017-07-18 10:18:22.598] [ERROR] console - [39mSyntaxError: Unexpected token e
+    at parse (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/read.js:116:18
+    at invokeCallback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:262:16)
+    at done (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:251:7)
+    at IncomingMessage.onEnd (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:307:7)
+    at emitNone (events.js:86:13)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-07-18 10:18:43.882] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:18:43.884] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:18:43.884] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 10:18:43 GMT+0530 (IST) <<<
+[32m[2017-07-18 10:18:43.884] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:18:43.884] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 10:18:43.885] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 10:18:43.885] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 10:18:43.885] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:18:43.885] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 10:18:43.886] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 10:18:43.886] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 10:18:43.886] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 10:18:43.905] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 10:18:43.905] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 10:18:43.906] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 10:18:43.906] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 10:18:44.802] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 10:18:44.809] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 10:18:44.809] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 10:18:44.810] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 10:18:44.810] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 10:18:44.812] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 10:18:44.813] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 10:18:44.884] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 10:18:44.891] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:18:44.891] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 10:18:45.111] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 10:18:45.130] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 10:18:45.132] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 10:18:45.133] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 10:18:45.139] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:18:45.141] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 10:18:45.359] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 10:18:45.373] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 10:18:45.375] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 10:18:45.382] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 10:18:45.382] [INFO] console - [39mserver is running on8082
+[32m[2017-07-18 10:18:47.861] [INFO] console - [39m{ user: 'risabh.s', getclaims: 'getclaims' } 'data in params for query method'
+[34m[2017-07-18 10:18:47.862] [TRACE] blockchain_sdk - [39mfetch claim details : entry 
+[34m[2017-07-18 10:18:47.862] [TRACE] blockchain_sdk - [39mfetch claim details : params - {"user":"risabh.s","getclaims":"getclaims"} 
+[34m[2017-07-18 10:18:47.863] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:18:47.863] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-07-18 10:18:52.768] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:18:52.769] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:18:52.775] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:18:54.779] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 0 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:18:54.780] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:18:54.780] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":1} 
+[32m[2017-07-18 10:18:55.339] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:18:55.340] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:18:55.341] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:18:57.342] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 1 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:18:57.343] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:18:57.344] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":2} 
+[32m[2017-07-18 10:18:57.904] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:18:57.904] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:18:57.905] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:18:59.906] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 2 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:18:59.907] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:18:59.907] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":3} 
+[32m[2017-07-18 10:19:00.480] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:19:00.483] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:19:00.484] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:19:02.485] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 3 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:19:02.489] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:19:02.489] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":4} 
+[32m[2017-07-18 10:19:03.085] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:19:03.085] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:19:03.086] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:19:05.087] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 4 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:19:05.087] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:19:05.088] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":5} 
+[32m[2017-07-18 10:19:05.631] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:19:05.631] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:19:05.632] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:19:07.632] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 5 - {"statusCode":500,"body":"Could not parse query response "}
+[34m[2017-07-18 10:19:07.633] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:19:07.633] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"c8e6c8f4e5652369fdd207d6390155260994fa98b06696352af0d6584bea6c3c5ef062f9bef2ca90301c9b3e755f79d7ac6ce9ee6d69a63d7f788c4b601e57fc","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":6} 
+[32m[2017-07-18 10:19:08.229] [INFO] blockchain_sdk - [39mdoQuery : data in data.result  - <Buffer >
+[32m[2017-07-18 10:19:08.229] [INFO] blockchain_sdk - [39mdoQuery : data in buffer.tostring  - ''
+[31m[2017-07-18 10:19:08.230] [ERROR] blockchain_sdk - [39mdoQuery : Could not parse query response - SyntaxError: Unexpected end of JSON input    at Object.parse (native)    at TransactionContext.<anonymous> (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/src/blockchain/blockchain_sdk.js:413:45)    at emitOne (events.js:96:13)    at TransactionContext.emit (events.js:188:7)    at Object.callback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/hfc/lib/hfc.js:1803:42)    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:422:14
+[31m[2017-07-18 10:19:08.231] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retries Exhausted - {"statusCode":500,"body":"Could not parse query response "}
+[31m[2017-07-18 10:19:08.233] [ERROR] blockchain_sdk - [39mgetclaims : Could not fetch user details - {"statusCode":500,"body":"Could not parse query response "}
+[32m[2017-07-18 10:19:08.236] [INFO] console - [39merror occurred[object Object]
+[32m[2017-07-18 10:19:16.922] [INFO] console - [39mddf
+[32m[2017-07-18 10:19:16.922] [INFO] console - [39mfdsf
+[32m[2017-07-18 10:19:16.922] [INFO] console - [39m45435
+[32m[2017-07-18 10:19:16.922] [INFO] console - [39m555
+[32m[2017-07-18 10:31:12.468] [INFO] console - [39m123
+[32m[2017-07-18 10:31:12.469] [INFO] console - [39m596cc783d90bb30750714f5b
+[32m[2017-07-18 10:31:12.469] [INFO] console - [39m123   123
+[32m[2017-07-18 10:31:12.474] [INFO] console - [39mundefined
+[32m[2017-07-18 10:31:26.341] [INFO] console - [39m123
+[32m[2017-07-18 10:31:26.342] [INFO] console - [39m596cc783d90bb30750714f5b
+[32m[2017-07-18 10:31:26.345] [INFO] console - [39m123   123
+[32m[2017-07-18 10:31:26.347] [INFO] console - [39mundefined
+[32m[2017-07-18 10:36:09.546] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:36:09.547] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:36:09.547] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 10:36:09 GMT+0530 (IST) <<<
+[32m[2017-07-18 10:36:09.548] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:36:09.548] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 10:36:09.548] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 10:36:09.549] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 10:36:09.549] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:36:09.549] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 10:36:09.550] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 10:36:09.550] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 10:36:09.550] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 10:36:09.559] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 10:36:09.559] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 10:36:09.559] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 10:36:09.559] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 10:36:10.471] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 10:36:10.486] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 10:36:10.486] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 10:36:10.489] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 10:36:10.490] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 10:36:10.499] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 10:36:10.501] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 10:36:10.637] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 10:36:10.647] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:36:10.648] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 10:36:10.863] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 10:36:10.885] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 10:36:10.888] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 10:36:10.889] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 10:36:10.898] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:36:10.899] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 10:36:11.111] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 10:36:11.128] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 10:36:11.130] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 10:36:11.137] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 10:36:11.138] [INFO] console - [39mserver is running on8082
+[31m[2017-07-18 10:36:50.560] [ERROR] console - [39mReferenceError: failed is not defined
+    at checkToken (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/routes.js:361:11)
+    at router.post (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/routes.js:213:21)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/route.js:137:13)
+    at cors (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:185:7)
+    at /home/rapidqube/nodemockups/node_modules/cors/lib/index.js:221:17
+    at originCallback (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:211:15)
+    at /home/rapidqube/nodemockups/node_modules/cors/lib/index.js:216:13
+    at optionsCallback (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:196:9)
+    at corsMiddleware (/home/rapidqube/nodemockups/node_modules/cors/lib/index.js:201:7)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:317:13)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/express/lib/router/index.js:284:7
+[32m[2017-07-18 10:37:48.565] [INFO] console - [39m123
+[32m[2017-07-18 10:37:48.565] [INFO] console - [39m5969c3338ffe617eb217b5c6
+[32m[2017-07-18 10:37:48.565] [INFO] console - [39m123   123
+[32m[2017-07-18 10:37:48.571] [INFO] console - [39mundefined
+[32m[2017-07-18 10:39:00.033] [INFO] console - [39mENTERING THE CORE MODULE
+[32m[2017-07-18 10:39:00.034] [INFO] console - [39mcalling SDK for create claim
+[34m[2017-07-18 10:39:00.034] [TRACE] blockchain_sdk - [39mcreateClaim : entry 
+[34m[2017-07-18 10:39:00.035] [TRACE] blockchain_sdk - [39mcreateClaim : params - {"user":"risabh.s","ClaimDetails":{"id":"5969c3338ffe617eb217b5c6","claim_no":"564","claim_title":"abc@a.com","claim_damagedetails":"fvfrvgrtgtrg"}} 
+[34m[2017-07-18 10:39:00.035] [TRACE] blockchain_sdk - [39mdoInvoke : entry 
+[34m[2017-07-18 10:39:00.035] [TRACE] blockchain_sdk - [39mdoInvoke : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"notifyClaim","args":["5969c3338ffe617eb217b5c6","564","abc@a.com","fvfrvgrtgtrg"]},"user":"risabh.s","retryCounter":0} 
+[32m[2017-07-18 10:39:05.628] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke submitted  - {"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"notifyClaim","args":["5969c3338ffe617eb217b5c6","564","abc@a.com","fvfrvgrtgtrg"]}
+[32m[2017-07-18 10:39:05.630] [INFO] blockchain_sdk - [39mnotifyClaim : Successfully notified campaign - EventInvokeSubmitted { uuid: '775f9541-6d7e-4897-9a34-4307c9ecd47a' }
+[32m[2017-07-18 10:39:08.859] [INFO] blockchain_sdk - [39mdoInvoke : Transaction for invoke complete  - EventInvokeComplete { result: 'Tx 775f9541-6d7e-4897-9a34-4307c9ecd47a complete' }
+[32m[2017-07-18 10:39:38.978] [INFO] console - [39m{ user: 'risabh.s', getclaims: 'getclaims' } 'data in params for query method'
+[34m[2017-07-18 10:39:38.978] [TRACE] blockchain_sdk - [39mfetch claim details : entry 
+[34m[2017-07-18 10:39:38.978] [TRACE] blockchain_sdk - [39mfetch claim details : params - {"user":"risabh.s","getclaims":"getclaims"} 
+[34m[2017-07-18 10:39:38.979] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:39:38.979] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-07-18 10:39:39.515] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:39:41.518] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 0 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:39:41.518] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:39:41.519] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":1} 
+[31m[2017-07-18 10:39:42.130] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:39:44.133] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 1 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:39:44.134] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:39:44.134] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":2} 
+[31m[2017-07-18 10:39:44.746] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:39:46.749] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 2 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:39:46.758] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:39:46.759] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":3} 
+[31m[2017-07-18 10:39:47.351] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:39:49.352] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 3 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:39:49.352] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:39:49.352] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":4} 
+[31m[2017-07-18 10:39:49.935] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:39:51.935] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 4 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:39:51.935] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:39:51.935] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":5} 
+[31m[2017-07-18 10:39:52.538] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:39:54.540] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 5 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:39:54.540] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:39:54.540] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":6} 
+[31m[2017-07-18 10:39:55.148] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:39:55.149] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retries Exhausted - {"statusCode":500,"body":"Could not perform query "}
+[31m[2017-07-18 10:39:55.151] [ERROR] blockchain_sdk - [39mgetclaims : Could not fetch user details - {"statusCode":500,"body":"Could not perform query "}
+[32m[2017-07-18 10:39:55.152] [INFO] console - [39merror occurred[object Object]
+[32m[2017-07-18 10:42:19.032] [INFO] console - [39m123
+[32m[2017-07-18 10:42:19.033] [INFO] console - [39m5969c53e03f767343354e2c7
+[32m[2017-07-18 10:42:19.034] [INFO] console - [39m123   123
+[32m[2017-07-18 10:42:19.049] [INFO] console - [39mundefined
+[31m[2017-07-18 10:47:35.571] [ERROR] console - [39mSyntaxError: Unexpected token e
+    at parse (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/types/json.js:83:15)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/read.js:116:18
+    at invokeCallback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:262:16)
+    at done (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:251:7)
+    at IncomingMessage.onEnd (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:307:7)
+    at emitNone (events.js:86:13)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-07-18 10:51:23.784] [INFO] console - [39mddf
+[32m[2017-07-18 10:51:23.785] [INFO] console - [39mee@ee.ee
+[32m[2017-07-18 10:51:23.786] [INFO] console - [39mdfdf
+[32m[2017-07-18 10:51:23.786] [INFO] console - [39m123
+[32m[2017-07-18 10:55:05.308] [INFO] console - [39mundefined
+[32m[2017-07-18 10:55:05.308] [INFO] console - [39mundefined
+[32m[2017-07-18 10:55:05.309] [INFO] console - [39mundefined
+[32m[2017-07-18 10:55:05.309] [INFO] console - [39mundefined
+[32m[2017-07-18 10:55:42.418] [INFO] console - [39m{ user: 'risabh.s', getclaims: 'getclaims' } 'data in params for query method'
+[34m[2017-07-18 10:55:42.459] [TRACE] blockchain_sdk - [39mfetch claim details : entry 
+[34m[2017-07-18 10:55:42.459] [TRACE] blockchain_sdk - [39mfetch claim details : params - {"user":"risabh.s","getclaims":"getclaims"} 
+[34m[2017-07-18 10:55:42.460] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:55:42.461] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":0} 
+[31m[2017-07-18 10:55:43.537] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { Error: {"created":"@1500355543.405383996","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1500355543.405247670","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}       at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/grpc/src/node/src/client.js:417:17 code: 14, metadata: [Object] },  msg: 'Error: {"created":"@1500355543.405383996","description":"Secure read failed","file":"../src/core/lib/security/transport/secure_endpoint.c","file_line":157,"grpc_status":14,"referenced_errors":[{"created":"@1500355543.405247670","description":"OS Error","errno":104,"file":"../src/core/lib/iomgr/tcp_posix.c","file_line":229,"os_error":"Connection reset by peer","syscall":"recvmsg"}]}' }
+[31m[2017-07-18 10:55:45.538] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 0 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:55:45.538] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:55:45.539] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":1} 
+[31m[2017-07-18 10:55:46.969] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:55:48.971] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 1 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:55:48.971] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:55:48.972] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":2} 
+[31m[2017-07-18 10:55:49.586] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:55:51.587] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 2 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:55:51.588] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:55:51.589] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":3} 
+[31m[2017-07-18 10:55:52.163] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:55:54.165] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 3 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:55:54.167] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:55:54.168] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":4} 
+[31m[2017-07-18 10:55:54.763] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:55:56.763] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 4 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:55:56.763] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:55:56.764] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":5} 
+[31m[2017-07-18 10:55:57.310] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:55:59.312] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retry 5 - {"statusCode":500,"body":"Could not perform query "}
+[34m[2017-07-18 10:55:59.312] [TRACE] blockchain_sdk - [39mdoQuery : entry 
+[34m[2017-07-18 10:55:59.313] [TRACE] blockchain_sdk - [39mdoQuery : params - {"requestSpec":{"chaincodeID":"ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997","fcn":"readuser","args":["getclaims"]},"user":"risabh.s","retryCounter":6} 
+[31m[2017-07-18 10:55:59.950] [ERROR] blockchain_sdk - [39mdoQuery : Could not perform query  - EventTransactionError {  error:    { status: 'FAILURE',     msg: <Buffer 45 72 72 6f 72 3a 46 61 69 6c 65 64 20 74 6f 20 6c 61 75 6e 63 68 20 63 68 61 69 6e 63 6f 64 65 20 73 70 65 63 28 43 6f 75 6c 64 20 6e 6f 74 20 67 65 ... > },  msg: 'Error:Failed to launch chaincode spec(Could not get deployment transaction for ee0acc5d83274dd214f3995dda8e62d9b57b44353c7c2f4585b237a938462fea81a4866c44e54ed73f89005f413c1003c3f9e1a0645f12350db0555b1ed75997 - LedgerError - ResourceNotFound: ledger: resource not found)' }
+[31m[2017-07-18 10:55:59.951] [ERROR] blockchain_sdk - [39mrecursiveQuery : Query Retries Exhausted - {"statusCode":500,"body":"Could not perform query "}
+[31m[2017-07-18 10:55:59.952] [ERROR] blockchain_sdk - [39mgetclaims : Could not fetch user details - {"statusCode":500,"body":"Could not perform query "}
+[32m[2017-07-18 10:55:59.952] [INFO] console - [39merror occurred[object Object]
+[32m[2017-07-18 10:57:08.878] [INFO] console - [39mundefined
+[32m[2017-07-18 10:57:08.900] [INFO] console - [39mundefined
+[32m[2017-07-18 10:57:08.904] [INFO] console - [39mundefined
+[32m[2017-07-18 10:57:08.906] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:39.765] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:58:39.768] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:58:39.768] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 10:58:39 GMT+0530 (IST) <<<
+[32m[2017-07-18 10:58:39.769] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 10:58:39.769] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 10:58:39.769] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 10:58:39.770] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 10:58:39.772] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 10:58:39.773] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 10:58:39.774] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 10:58:39.774] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 10:58:39.774] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 10:58:39.779] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 10:58:39.779] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 10:58:39.779] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 10:58:39.779] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 10:58:40.598] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 10:58:40.609] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 10:58:40.610] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 10:58:40.612] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 10:58:40.613] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 10:58:40.620] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 10:58:40.622] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 10:58:40.720] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 10:58:40.726] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:58:40.727] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 10:58:40.910] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 10:58:40.929] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 10:58:40.932] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 10:58:40.933] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 10:58:40.939] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 10:58:40.940] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 10:58:41.120] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 10:58:41.133] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 10:58:41.135] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 10:58:41.142] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 10:58:41.143] [INFO] console - [39mserver is running on8082
+[32m[2017-07-18 10:58:44.815] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:44.816] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:44.816] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:44.816] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:46.209] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:46.210] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:46.210] [INFO] console - [39mundefined
+[32m[2017-07-18 10:58:46.210] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:02.790] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:02.791] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:02.792] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:02.792] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:24.064] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:00:24.065] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:00:24.066] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 11:00:24 GMT+0530 (IST) <<<
+[32m[2017-07-18 11:00:24.066] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:00:24.067] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 11:00:24.067] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 11:00:24.067] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 11:00:24.068] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:00:24.068] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 11:00:24.069] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 11:00:24.070] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 11:00:24.071] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 11:00:24.075] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 11:00:24.075] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 11:00:24.076] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 11:00:24.076] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 11:00:24.983] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 11:00:24.989] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 11:00:24.989] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 11:00:24.990] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 11:00:24.990] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 11:00:24.993] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 11:00:24.993] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 11:00:25.063] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 11:00:25.072] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:00:25.072] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 11:00:25.283] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 11:00:25.302] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 11:00:25.305] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 11:00:25.307] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 11:00:25.314] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:00:25.315] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 11:00:26.175] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 11:00:26.182] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 11:00:26.183] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 11:00:26.185] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 11:00:26.185] [INFO] console - [39mserver is running on8082
+[32m[2017-07-18 11:00:31.453] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:31.454] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:31.455] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:31.455] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:47.594] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:47.594] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:47.594] [INFO] console - [39mundefined
+[32m[2017-07-18 11:00:47.594] [INFO] console - [39mundefined
+[32m[2017-07-18 11:01:17.286] [INFO] console - [39mundefined
+[32m[2017-07-18 11:01:17.287] [INFO] console - [39mundefined
+[32m[2017-07-18 11:01:17.287] [INFO] console - [39mundefined
+[32m[2017-07-18 11:01:17.287] [INFO] console - [39mundefined
+[32m[2017-07-18 11:10:00.955] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:10:00.956] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:10:00.956] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 11:10:00 GMT+0530 (IST) <<<
+[32m[2017-07-18 11:10:00.957] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:10:00.957] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 11:10:00.957] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 11:10:00.957] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 11:10:00.957] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:10:00.957] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 11:10:00.958] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 11:10:00.958] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 11:10:00.958] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 11:10:00.963] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 11:10:00.963] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 11:10:00.963] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 11:10:00.964] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 11:10:02.178] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 11:10:02.182] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 11:10:02.182] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 11:10:02.183] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 11:10:02.183] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 11:10:02.186] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 11:10:02.187] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 11:10:02.275] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 11:10:02.284] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:10:02.284] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 11:10:02.465] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 11:10:02.483] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 11:10:02.485] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 11:10:02.486] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 11:10:02.493] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:10:02.495] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 11:10:02.686] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 11:10:02.701] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 11:10:02.703] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 11:10:02.711] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 11:10:02.712] [INFO] console - [39mserver is running on8082
+[32m[2017-07-18 11:10:07.622] [INFO] console - [39mundefined
+[32m[2017-07-18 11:10:07.624] [INFO] console - [39mundefined
+[32m[2017-07-18 11:10:07.624] [INFO] console - [39mundefined
+[32m[2017-07-18 11:10:07.624] [INFO] console - [39mundefined
+[32m[2017-07-18 11:16:34.271] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:16:34.274] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:16:34.274] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 11:16:34 GMT+0530 (IST) <<<
+[32m[2017-07-18 11:16:34.275] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:16:34.275] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 11:16:34.275] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 11:16:34.276] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 11:16:34.276] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:16:34.276] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 11:16:34.277] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 11:16:34.278] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 11:16:34.278] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 11:16:34.284] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 11:16:34.284] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 11:16:34.285] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 11:16:34.285] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 11:16:35.152] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 11:16:35.164] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 11:16:35.164] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 11:16:35.166] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 11:16:35.167] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 11:16:35.173] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 11:16:35.175] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 11:16:35.295] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 11:16:35.304] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:16:35.305] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 11:16:35.494] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 11:16:35.513] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 11:16:35.514] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 11:16:35.515] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 11:16:35.521] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:16:35.523] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 11:16:35.704] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 11:16:35.716] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 11:16:35.718] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 11:16:35.726] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 11:16:35.727] [INFO] console - [39mserver is running on8082
+[32m[2017-07-18 11:16:52.052] [INFO] console - [39mundefined
+[32m[2017-07-18 11:16:52.053] [INFO] console - [39mundefined
+[32m[2017-07-18 11:16:52.054] [INFO] console - [39mundefined
+[32m[2017-07-18 11:16:52.055] [INFO] console - [39mundefined
+[32m[2017-07-18 11:17:42.011] [INFO] console - [39m123
+[32m[2017-07-18 11:17:42.012] [INFO] console - [39m5969c3338ffe617eb217b5c6
+[32m[2017-07-18 11:17:42.013] [INFO] console - [39m123   123
+[32m[2017-07-18 11:17:42.033] [INFO] console - [39mundefined
+[32m[2017-07-18 11:18:20.077] [INFO] console - [39m123
+[32m[2017-07-18 11:18:20.077] [INFO] console - [39m5969c4348ffe617eb217b5c7
+[32m[2017-07-18 11:18:20.077] [INFO] console - [39m123   123
+[32m[2017-07-18 11:18:20.079] [INFO] console - [39mundefined
+[32m[2017-07-18 11:19:17.879] [INFO] console - [39m1234
+[32m[2017-07-18 11:19:17.879] [INFO] console - [39mabc@a.com
+[32m[2017-07-18 11:19:17.879] [INFO] console - [39m1234569870
+[32m[2017-07-18 11:19:17.879] [INFO] console - [39m123
+[32m[2017-07-18 11:19:44.627] [INFO] console - [39mundefined
+[32m[2017-07-18 11:19:44.627] [INFO] console - [39mundefined
+[32m[2017-07-18 11:19:44.627] [INFO] console - [39mundefined
+[32m[2017-07-18 11:19:44.627] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:02.469] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:21:02.470] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:21:02.470] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 11:21:02 GMT+0530 (IST) <<<
+[32m[2017-07-18 11:21:02.471] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 11:21:02.472] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 11:21:02.472] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 11:21:02.473] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 11:21:02.473] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 11:21:02.473] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 11:21:02.474] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 11:21:02.474] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 11:21:02.474] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 11:21:02.478] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 11:21:02.478] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 11:21:02.478] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 11:21:02.478] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 11:21:03.241] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 11:21:03.244] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 11:21:03.244] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 11:21:03.245] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 11:21:03.245] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 11:21:03.248] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 11:21:03.249] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 11:21:03.626] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 11:21:03.633] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:21:03.634] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 11:21:03.822] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 11:21:03.845] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 11:21:03.845] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 11:21:03.846] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 11:21:03.851] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 11:21:03.851] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 11:21:04.029] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 11:21:04.045] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 11:21:04.047] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 11:21:04.053] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 11:21:04.054] [INFO] console - [39mserver is running on8082
+[32m[2017-07-18 11:21:21.399] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:21.399] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:21.404] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:21.404] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:49.196] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:49.197] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:49.197] [INFO] console - [39mundefined
+[32m[2017-07-18 11:21:49.198] [INFO] console - [39mundefined
+[32m[2017-07-18 11:23:38.217] [INFO] console - [39mabc
+[32m[2017-07-18 11:23:38.217] [INFO] console - [39mabc@a.com
+[32m[2017-07-18 11:23:38.217] [INFO] console - [39m1234569870
+[32m[2017-07-18 11:23:38.217] [INFO] console - [39m123
+[32m[2017-07-18 11:24:19.657] [INFO] console - [39mabc
+[32m[2017-07-18 11:24:19.657] [INFO] console - [39mab@a.com
+[32m[2017-07-18 11:24:19.657] [INFO] console - [39m1234569870
+[32m[2017-07-18 11:24:19.657] [INFO] console - [39m123
+[32m[2017-07-18 11:26:04.214] [INFO] console - [39mundefined
+[32m[2017-07-18 11:26:04.214] [INFO] console - [39mtt@ww.vv
+[32m[2017-07-18 11:26:04.215] [INFO] console - [39mundefined
+[32m[2017-07-18 11:26:04.215] [INFO] console - [39mkik78
+[32m[2017-07-18 11:26:19.051] [INFO] console - [39mabc
+[32m[2017-07-18 11:26:19.051] [INFO] console - [39mabc@a.com
+[32m[2017-07-18 11:26:19.051] [INFO] console - [39m1234569870
+[32m[2017-07-18 11:26:19.052] [INFO] console - [39m123
+[32m[2017-07-18 11:26:26.702] [INFO] console - [39mabc
+[32m[2017-07-18 11:26:26.702] [INFO] console - [39mabc@b.com
+[32m[2017-07-18 11:26:26.703] [INFO] console - [39m1234569870
+[32m[2017-07-18 11:26:26.704] [INFO] console - [39m123
+[32m[2017-07-18 11:27:15.854] [INFO] console - [39merer
+[32m[2017-07-18 11:27:15.858] [INFO] console - [39mrr@rr.cfom
+[32m[2017-07-18 11:27:15.858] [INFO] console - [39m333
+[32m[2017-07-18 11:27:15.859] [INFO] console - [39m11
+[32m[2017-07-18 11:29:25.381] [INFO] console - [39m123
+[32m[2017-07-18 11:29:25.381] [INFO] console - [39m596da30ac7bd7e262e4d726e
+[32m[2017-07-18 11:29:25.382] [INFO] console - [39m123   123
+[32m[2017-07-18 11:29:25.386] [INFO] console - [39mundefined
+[32m[2017-07-18 11:30:38.476] [INFO] console - [39m123
+[32m[2017-07-18 11:30:38.477] [INFO] console - [39m596da30ac7bd7e262e4d726e
+[32m[2017-07-18 11:30:38.478] [INFO] console - [39m123   123
+[32m[2017-07-18 11:30:38.479] [INFO] console - [39mundefined
+[32m[2017-07-18 11:32:12.024] [INFO] console - [39m123
+[32m[2017-07-18 11:32:12.026] [INFO] console - [39mee@ee.ee
+[32m[2017-07-18 11:32:12.026] [INFO] console - [39m1234
+[32m[2017-07-18 11:32:12.026] [INFO] console - [39m123
+[32m[2017-07-18 11:33:41.952] [INFO] console - [39mrr
+[32m[2017-07-18 11:33:41.952] [INFO] console - [39mrr@rr.com
+[32m[2017-07-18 11:33:41.952] [INFO] console - [39m22
+[32m[2017-07-18 11:33:41.952] [INFO] console - [39m22
+[32m[2017-07-18 11:36:44.734] [INFO] console - [39m22
+[32m[2017-07-18 11:36:44.735] [INFO] console - [39m596da4bdc7bd7e262e4d7271
+[32m[2017-07-18 11:36:44.737] [INFO] console - [39m22   22
+[32m[2017-07-18 11:36:44.738] [INFO] console - [39mundefined
+[32m[2017-07-18 11:37:16.268] [INFO] console - [39m123
+[32m[2017-07-18 11:37:16.268] [INFO] console - [39m596da30ac7bd7e262e4d726e
+[32m[2017-07-18 11:37:16.269] [INFO] console - [39m123   123
+[32m[2017-07-18 11:37:16.271] [INFO] console - [39mundefined
+[32m[2017-07-18 11:39:46.188] [INFO] console - [39m123
+[32m[2017-07-18 11:39:46.188] [INFO] console - [39m5969c3338ffe617eb217b5c6
+[32m[2017-07-18 11:39:46.189] [INFO] console - [39m123   123
+[32m[2017-07-18 11:39:46.191] [INFO] console - [39mundefined
+[32m[2017-07-18 11:55:23.351] [INFO] console - [39m123
+[32m[2017-07-18 11:55:23.351] [INFO] console - [39m5969c3338ffe617eb217b5c6
+[32m[2017-07-18 11:55:23.351] [INFO] console - [39m123   123
+[32m[2017-07-18 11:55:23.353] [INFO] console - [39mundefined
+[31m[2017-07-18 11:55:34.870] [ERROR] console - [39mSyntaxError: Unexpected string in JSON at position 87
+    at Object.parse (native)
+    at parse (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/types/json.js:88:17)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/read.js:116:18
+    at invokeCallback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:262:16)
+    at done (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:251:7)
+    at IncomingMessage.onEnd (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:307:7)
+    at emitNone (events.js:86:13)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[31m[2017-07-18 11:55:41.852] [ERROR] console - [39mSyntaxError: Unexpected string in JSON at position 87
+    at Object.parse (native)
+    at parse (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/types/json.js:88:17)
+    at /home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/body-parser/lib/read.js:116:18
+    at invokeCallback (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:262:16)
+    at done (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:251:7)
+    at IncomingMessage.onEnd (/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/node_modules/raw-body/index.js:307:7)
+    at emitNone (events.js:86:13)
+    at IncomingMessage.emit (events.js:185:7)
+    at endReadableNT (_stream_readable.js:974:12)
+    at _combinedTickCallback (internal/process/next_tick.js:80:11)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-07-18 11:55:50.442] [INFO] console - [39m123
+[32m[2017-07-18 11:55:50.448] [INFO] console - [39m5969c3338ffe617eb217b5c6
+[32m[2017-07-18 11:55:50.448] [INFO] console - [39m123   123
+[32m[2017-07-18 11:55:50.451] [INFO] console - [39mundefined
+[32m[2017-07-18 12:01:12.088] [INFO] console - [39m123
+[32m[2017-07-18 12:01:12.089] [INFO] console - [39m5969c3338ffe617eb217b5c6
+[32m[2017-07-18 12:01:12.089] [INFO] console - [39m123   123
+[32m[2017-07-18 12:01:12.092] [INFO] console - [39mundefined
+[32m[2017-07-18 12:01:13.573] [INFO] console - [39m123
+[32m[2017-07-18 12:01:13.574] [INFO] console - [39m5969c3338ffe617eb217b5c6
+[32m[2017-07-18 12:01:13.574] [INFO] console - [39m123   123
+[32m[2017-07-18 12:01:13.575] [INFO] console - [39mundefined
+[32m[2017-07-18 12:01:31.971] [INFO] console - [39m123
+[32m[2017-07-18 12:01:31.971] [INFO] console - [39m596da28bc7bd7e262e4d726c
+[32m[2017-07-18 12:01:31.973] [INFO] console - [39m123   123
+[32m[2017-07-18 12:01:31.993] [INFO] console - [39mundefined
+[32m[2017-07-18 12:06:44.503] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 12:06:44.504] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 12:06:44.504] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Tue Jul 18 2017 12:06:44 GMT+0530 (IST) <<<
+[32m[2017-07-18 12:06:44.505] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-07-18 12:06:44.505] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /home/rapidqube/.nvm/versions/node/v6.11.0/bin/node,/home/rapidqube/nodemockups/CommercialInsurance/commercialInsurance/app.js
+[32m[2017-07-18 12:06:44.505] [INFO] BlockchainSampleClient - [39mNode version: v6.11.0
+[32m[2017-07-18 12:06:44.505] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.0","v8":"5.1.281.102","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2k"}
+[32m[2017-07-18 12:06:44.506] [INFO] BlockchainSampleClient - [39m
+[32m[2017-07-18 12:06:44.506] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-07-18 12:06:44.506] [TRACE] app.js - [39msetup : entry
+[34m[2017-07-18 12:06:44.507] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-07-18 12:06:44.507] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix","password":"82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704","host":"9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com","port":443,"url":"https://9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix:82ecbcc036adcc89fdd43464e6cb51f5aa276d5a2eb74a439e2a53bfe77b3704@9ccffff1-ce80-4908-8da1-56b68d64bc68-bluemix.cloudant.com"}} 
+[34m[2017-07-18 12:06:44.511] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-07-18 12:06:44.511] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-07-18 12:06:44.511] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-07-18 12:06:44.511] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-07-18 12:06:45.348] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-07-18 12:06:45.358] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-07-18 12:06:45.358] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-07-18 12:06:45.361] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-07-18 12:06:45.362] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-07-18 12:06:45.372] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-07-18 12:06:45.375] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-07-18 12:06:45.479] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-07-18 12:06:45.489] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 12:06:45.489] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-07-18 12:06:45.671] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-07-18 12:06:45.687] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-07-18 12:06:45.687] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-07-18 12:06:45.688] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-07-18 12:06:45.693] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-07-18 12:06:45.694] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-07-18 12:06:45.873] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-07-18 12:06:45.885] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-07-18 12:06:45.886] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-07-18 12:06:45.892] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-07-18 12:06:45.892] [INFO] console - [39mserver is running on8082
