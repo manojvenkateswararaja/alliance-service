@@ -6,13 +6,13 @@ var bcSdk = require('../fabcar/invoke.js');
 var user = 'risabh.s';
 var affiliation = 'fundraiser';
 //exports is used here so that registerUser can be exposed for router and blockchainSdk file
-exports.notifyClaim = (id, claim_no, claim_title, claim_damagedetails) =>
+exports.notifyClaim = (policyno, claim_no, claim_title, claim_damagedetails) =>
     new Promise((resolve, reject) => {
 
 
         const claim_details = ({
 
-            id: id,
+            policyno: policyno,
             claim_no: claim_no,
             claim_title: claim_title,
 
