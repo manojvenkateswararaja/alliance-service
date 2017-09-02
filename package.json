@@ -36,6 +36,7 @@
     "node-datetime": "^2.0.0",
     "nodemailer": "^2.6.0",
     "performance-now": "^2.1.0",
+    "promise": "^8.0.1",
     "randomstring": "^1.1.5",
     "tunnel-agent": "^0.6.0",
     "underscore": "^1.8.3",
