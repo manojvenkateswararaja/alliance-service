@@ -880,7 +880,8 @@ module.exports = router => {
 
 
     router.post('/notifyClaim', cors(), (req, res) => {
-        const policyno = "123";
+        const userid = getUserId(req)
+        const policyno = req.body.policyno;
 
 
         const claim_no1 = Math.floor(Math.random() * (1000 - 1)) + 1;
@@ -1354,23 +1355,23 @@ module.exports = router => {
                 })
 
                 .then(function(result) {
-                    console.log("result array data" + result.claimlist.body.claimlist);
+                    console.log("result array data" + result.claimlist.claimlist);
 
                     var filteredclaims = [];
 
                     var status = [];
                     var daysDifference = [];
                     var countstatus
-                    console.log("length of result array" + result.claimlist.body.claimlist.length);
+                    console.log("length of result array" + result.claimlist.claimlist.length);
 
-                    for (let i = 0; i < result.claimlist.body.claimlist.length; i++) {
+                    for (let i = 0; i < result.claimlist.claimlist.length; i++) {
                         console.log("id" + id);
-                        console.log("userid" + result.claimlist.body.claimlist[i].userid);
+                        console.log("userid" + result.claimlist.claimlist[i].userid);
                         if (id === id) {
 
-                            if (result.claimlist.body.claimlist[i].status == "Submitted") {
-                                filteredclaims.push(result.claimlist.body.claimlist[i]);
-                                status.push(result.claimlist.body.claimlist[i].status);
+                            if (result.claimlist.claimlist[i].status == "Submitted") {
+                                filteredclaims.push(result.claimlist.claimlist[i]);
+                                status.push(result.claimlist.claimlist[i].status);
                                 countstatus = count(status);
 
                                 console.log("countstatus" + countstatus);
@@ -1402,12 +1403,12 @@ module.exports = router => {
 
 
                             }
-                            if (result.claimlist.body.claimlist[i].status == "Notified") {
-                                status.push(result.claimlist.body.claimlist[i].status);
+                            if (result.claimlist.claimlist[i].status == "Notified") {
+                                status.push(result.claimlist.claimlist[i].status);
                                 countstatus = count(status);
                             }
-                            if (result.claimlist.body.claimlist[i].examinerid === id) {
-                                status.push(result.claimlist.body.claimlist[i].status);
+                            if (result.claimlist.claimlist[i].examinerid === id) {
+                                status.push(result.claimlist.claimlist[i].status);
                                 countstatus = count(status);
 
 
@@ -1452,31 +1453,31 @@ module.exports = router => {
                 })
 
                 .then(function(result) {
-                    console.log("result array data" + result.claimlist.body.claimlist);
+                    console.log("result array data" + result.claimlist.claimlist);
 
                     var filteredclaims = [];
 
                     var status = [];
                     var daysDifference = [];
                     var countstatus
-                    console.log("length of result array" + result.claimlist.body.claimlist.length);
+                    console.log("length of result array" + result.claimlist.claimlist.length);
 
-                    for (let i = 0; i < result.claimlist.body.claimlist.length; i++) {
+                    for (let i = 0; i < result.claimlist.claimlist.length; i++) {
                         console.log("id" + id);
-                        console.log("userid" + result.claimlist.body.claimlist[i].userid);
+                        console.log("userid" + result.claimlist.claimlist[i].userid);
                         if (id === id) {
 
-                            if (result.claimlist.body.claimlist[i].status == "Examined" || result.claimlist.body.claimlist[i].status == "Validated" || result.claimlist.body.claimlist[i].status == "Approved" || result.claimlist.body.claimlist[i].status == "Settled") {
-                                filteredclaims.push(result.claimlist.body.claimlist[i]);
+                            if (result.claimlist.claimlist[i].status == "Examined" || result.claimlist.claimlist[i].status == "Validated" || result.claimlist.claimlist[i].status == "Approved" || result.claimlist.claimlist[i].status == "Settled") {
+                                filteredclaims.push(result.claimlist.claimlist[i]);
 
-                                if (result.claimlist.body.claimlist[i].status == "Examined") {
-                                    status.push(result.claimlist.body.claimlist[i].status);
-                                } else if (result.claimlist.body.claimlist[i].status == "Validated") {
-                                    status.push(result.claimlist.body.claimlist[i].status);
-                                } else if (result.claimlist.body.claimlist[i].status == "Approved") {
-                                    status.push(result.claimlist.body.claimlist[i].status);
-                                } else if (result.claimlist.body.claimlist[i].status == "Settled") {
-                                    status.push(result.claimlist.body.claimlist[i].status);
+                                if (result.claimlist.claimlist[i].status == "Examined") {
+                                    status.push(result.claimlist.claimlist[i].status);
+                                } else if (result.claimlist.claimlist[i].status == "Validated") {
+                                    status.push(result.claimlist.claimlist[i].status);
+                                } else if (result.claimlist.claimlist[i].status == "Approved") {
+                                    status.push(result.claimlist.claimlist[i].status);
+                                } else if (result.claimlist.claimlist[i].status == "Settled") {
+                                    status.push(result.claimlist.claimlist[i].status);
                                 }
 
                                 countstatus = count(status);
@@ -1511,8 +1512,8 @@ module.exports = router => {
 
                             }
 
-                            if (result.claimlist.body.claimlist[i].status == "Notified" || result.claimlist.body.claimlist[i].status == "Submitted") {
-                                status.push(result.claimlist.body.claimlist[i].status);
+                            if (result.claimlist.claimlist[i].status == "Notified" || result.claimlist.claimlist[i].status == "Submitted") {
+                                status.push(result.claimlist.claimlist[i].status);
                                 countstatus = count(status);
                             }
 
@@ -1556,7 +1557,7 @@ module.exports = router => {
                 })
 
                 .then(function(result) {
-                    console.log("result array data" + result.claimlist.body.claimlist);
+                    console.log("result array data" + result.claimlist.claimlist);
 
                     var filteredclaims = [];
 
@@ -1565,22 +1566,22 @@ module.exports = router => {
                     var daysDifference = [];
                     var countstatus
                     var countstatus1
-                    console.log("length of result array" + result.claimlist.body.claimlist.length);
+                    console.log("length of result array" + result.claimlist.claimlist.length);
 
-                    for (let i = 0; i < result.claimlist.body.claimlist.length; i++) {
+                    for (let i = 0; i < result.claimlist.claimlist.length; i++) {
                         console.log("id" + id);
-                        console.log("userid" + result.claimlist.body.claimlist[i].userid);
-                        if (result.claimlist.body.claimlist[i].publicadjusterid === id) {
+                        console.log("userid" + result.claimlist.claimlist[i].userid);
+                        if (result.claimlist.claimlist[i].publicadjusterid === id) {
 
-                            if (result.claimlist.body.claimlist[i].status == "Validated" || result.claimlist.body.claimlist[i].status == "Approved" || result.claimlist.body.claimlist[i].status == "Settled") {
-                                filteredclaims.push(result.claimlist.body.claimlist[i]);
-                                if (result.claimlist.body.claimlist[i].status == "Validated") {
-                                    status1.push(result.claimlist.body.claimlist[i].status);
+                            if (result.claimlist.claimlist[i].status == "Validated" || result.claimlist.claimlist[i].status == "Approved" || result.claimlist.claimlist[i].status == "Settled") {
+                                filteredclaims.push(result.claimlist.claimlist[i]);
+                                if (result.claimlist.claimlist[i].status == "Validated") {
+                                    status1.push(result.claimlist.claimlist[i].status);
                                     countstatus1 = count(status1);
-                                } else if (result.claimlist.body.claimlist[i].status == "Approved") {
-                                    status.push(result.claimlist.body.claimlist[i].status);
-                                } else if (result.claimlist.body.claimlist[i].status == "Settled") {
-                                    status.push(result.claimlist.body.claimlist[i].status);
+                                } else if (result.claimlist.claimlist[i].status == "Approved") {
+                                    status.push(result.claimlist.claimlist[i].status);
+                                } else if (result.claimlist.claimlist[i].status == "Settled") {
+                                    status.push(result.claimlist.claimlist[i].status);
                                 }
 
                                 countstatus = count(status);
@@ -1615,8 +1616,8 @@ module.exports = router => {
 
                             }
 
-                            if (result.claimlist.body.claimlist[i].status == "Notified" || result.claimlist.body.claimlist[i].status == "Submitted" || result.claimlist.body.claimlist[i].status == "Examined") {
-                                status.push(result.claimlist.body.claimlist[i].status);
+                            if (result.claimlist.claimlist[i].status == "Notified" || result.claimlist.claimlist[i].status == "Submitted" || result.claimlist.claimlist[i].status == "Examined") {
+                                status.push(result.claimlist.claimlist[i].status);
                                 countstatus = count(status);
                             }
                         }

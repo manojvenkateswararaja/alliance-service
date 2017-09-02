@@ -15,7 +15,7 @@ var options = {
     wallet_path: path.join(__dirname, './creds'),
     user_id: 'PeerAdmin',
     channel_id: 'mychannel',
-    chaincode_id: 'commercial_Insurance',
+    chaincode_id: 'marine_Insurance',
     network_url: 'grpc://localhost:7051',
 };
 
