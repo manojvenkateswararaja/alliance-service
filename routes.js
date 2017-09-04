@@ -735,10 +735,10 @@ module.exports = router => {
                             "agentName": filteredPolicy[i].usertype
                         });
                     }
-                    // return res.json({
-                    //     "status": true,
-                    //     "message": issuedPolicies
-                    // });
+                        return res.json({
+                        "status": true,
+                        "issuedPolicies": issuedPolicies
+                    });
 
                 })
                 .catch(err => res.status(err.status).json({
@@ -748,11 +748,7 @@ module.exports = router => {
 
 
 
-            return res.json({
-                "status": true,
-                "message": issuedPolicies
-            });
-
+            
         } else {
             res.status(401).json({
                 "status": false,
