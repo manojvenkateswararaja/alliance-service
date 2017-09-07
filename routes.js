@@ -50,11 +50,12 @@ module.exports = router => {
         console.log("entering register function in functions");
 
         const emailid = req.body.email;
+
         console.log(emailid);
-        const userObjects = req.body.userObject;
-        console.log(userObjects);
         const passwordid = req.body.password;
         console.log(passwordid);
+        const userObjects = req.body.userObject;
+        console.log(userObjects);
         const usertypeid = req.body.usertype;
         console.log(usertypeid);
         var json = {
@@ -365,18 +366,13 @@ module.exports = router => {
 
     router.post("/fetchPolicyQuotes", (req, res) => {
         var id = getUserId(req)
+        console.log("id"+id);
         var consignmentWeight = (req.body.consignmentWeight);
         console.log("consignmentWeight:" + consignmentWeight);
         var consignmentValue = (req.body.consignmentValue);
         console.log("consignmentValue:" + consignmentValue);
-        var policyName = req.body.policyName;
-        console.log("policyName:" + policyName);
-        var sumInsured = (req.body.sumInsured);
-        console.log("sumInsured:" + sumInsured);
-        var premiumAmount = (req.body.premiumAmount);
-        console.log("premiumAmount:" + premiumAmount);
         var modeofTransport = req.body.modeofTransport;
-        console.log("modeofTransport" + modeofTransport);
+        console.log("modeofTransport:" + modeofTransport);
         var packingMode = req.body.packingMode
         console.log("packingMode:" + packingMode);
         var consignmentType = req.body.consignmentType;
@@ -385,23 +381,10 @@ module.exports = router => {
         console.log("contractType:" + contractType);
         var policyType = req.body.policyType;
         console.log("policyType:" + policyType);
-        var email = req.body.email;
-        console.log("email:" + email);
-        var policyHolderName = req.body.policyHolderName;
-        console.log("policyHolderName:" + policyHolderName);
-        var userType = req.body.userType;
-        console.log("userType:" + userType);
         var invoiceNo = req.body.invoiceNo;
         console.log("invoiceNo:" + invoiceNo);
-        var policyIssueDate = req.body.policyissuedate
-        console.log("policyIssueDate:" + policyIssueDate);
-        var policyEndDate = req.body.policyenddate;
-        console.log("policyEndDate:" + policyEndDate);
-        var voyageStartDate = req.body.voyagestartdate;
-        console.log("voyageStartDate:" + voyageStartDate);
-        var voyageEndDate = req.body.voyageenddate;
-        console.log("voyageEndDate:" + voyageEndDate);
-        if (!consignmentWeight || !consignmentValue || !policyName || !sumInsured || !premiumAmount || !modeofTransport || !packingMode || !consignmentType || !contractType || !policyType || !email || !policyHolderName || !userType || !invoiceNo || !policyIssueDate || !policyEndDate || !voyageStartDate || !voyageEndDate || !consignmentWeight.trim() || !consignmentValue.trim() || !policyName.trim() || !sumInsured.trim() || !premiumAmount.trim() || !modeofTransport.trim() || !packingMode.trim() || !consignmentType.trim() || !contractType.trim() || !policyType.trim() || !email.trim() || !policyHolderName.trim() || !userType.trim() || !invoiceNo.trim() || !policyIssueDate.trim() || !policyEndDate.trim() || !voyageStartDate.trim() || !voyageEndDate.trim()) {
+        
+        if (!consignmentWeight || !consignmentValue || !modeofTransport || !packingMode || !consignmentType || !contractType || !policyType || !invoiceNo || !consignmentWeight.trim() || !consignmentValue.trim() || !packingMode.trim() || !consignmentType.trim() || !contractType.trim() || !policyType.trim() || !invoiceNo.trim()) {
 
             res.status(400).json({
                 "status": false,
@@ -676,7 +659,7 @@ module.exports = router => {
 
             }
 
-            savepolicy.savePolicy(id, consignmentWeight, consignmentValue, policyName, sumInsured, premiumAmount, modeofTransport, packingMode, consignmentType, contractType, policyType, email, policyHolderName, userType, invoiceNo, policyIssueDate, policyEndDate, voyageStartDate, voyageEndDate)
+            savepolicy.savePolicy(id, consignmentWeight, consignmentValue, modeofTransport, packingMode, consignmentType, contractType, policyType, invoiceNo)
 
                 .then((result) => {
                     res.status(200).json({
@@ -721,6 +704,7 @@ module.exports = router => {
                         if (bodyObj[i].id === id) {
                             filteredPolicy.push(bodyObj[i]);
                             console.log(filteredPolicy.length)
+                            console.log(filteredPolicy)
                         }
                     }
                     for (let i = 0; i < filteredPolicy.length; i++) {
@@ -735,10 +719,11 @@ module.exports = router => {
                             "agentName": filteredPolicy[i].usertype
                         });
                     }
-                        return res.json({
-                        "status": true,
+                 return res.json({
+                     "status": true,
                         "issuedPolicies": issuedPolicies
-                    });
+                     });
+                 
 
                 })
                 .catch(err => res.status(err.status).json({
@@ -748,7 +733,11 @@ module.exports = router => {
 
 
 
-            
+            // return res.json({
+            //     "status": true,
+            //     "message": issuedPolicies
+            // });
+
         } else {
             res.status(401).json({
                 "status": false,
