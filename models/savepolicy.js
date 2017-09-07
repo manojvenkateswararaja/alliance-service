@@ -8,22 +8,15 @@ const policySchema = mongoose.Schema({
     id: String,
     consignmentWeight: Number,
     consignmentValue: Number,
-    policyName: String,
-    sumInsured: Number,
-    premiumAmount: Number,
+    
     modeofTransport: String,
     packingMode: String,
     consignmentType: String,
     contractType: String,
     policyType: String,
-    email: String,
-    policyHolderName: String,
-    userType: String,
+   
     invoiceNo: Number,
-    policyIssueDate: String,
-    policyEndDate: String,
-    voyageStartDate: String,
-    voyageEndDate: String
+   
 
 
 });
