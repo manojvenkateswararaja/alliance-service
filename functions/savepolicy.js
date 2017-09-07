@@ -3,7 +3,7 @@
 const savepolicy = require('../models/savepolicy');
 
 
-exports.savePolicy = (id, consignmentWeight, consignmentValue, policyName, sumInsured, premiumAmount, modeofTransport, packingMode, consignmentType, contractType, policyType, email, policyHolderName, userType, invoiceNo, policyIssueDate, policyEndDate, voyageStartDate, voyageEndDate) =>
+exports.savePolicy = (id, consignmentWeight, consignmentValue, modeofTransport, packingMode, consignmentType, contractType, policyType, invoiceNo) =>
 
     new Promise((resolve, reject) => {
 
@@ -12,22 +12,15 @@ exports.savePolicy = (id, consignmentWeight, consignmentValue, policyName, sumIn
             id: id,
             consignmentWeight: consignmentWeight,
             consignmentValue: consignmentValue,
-            policyName: policyName,
-            sumInsured: sumInsured,
-            premiumAmount: premiumAmount,
+           
             modeofTransport: modeofTransport,
             packingMode: packingMode,
             consignmentType: consignmentType,
             contractType: contractType,
             policyType: policyType,
-            email: email,
-            policyHolderName: policyHolderName,
-            userType: userType,
+           
             invoiceNo: invoiceNo,
-            policyIssueDate: policyIssueDate,
-            policyEndDate: policyEndDate,
-            voyageStartDate: voyageStartDate,
-            voyageEndDate: voyageStartDate
+            
 
 
         });
