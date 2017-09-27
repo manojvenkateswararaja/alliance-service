@@ -1,5 +1,5 @@
 // This is just a sample script. Paste your real code (javascript or HTML) here.
-//here only routing is done and if the ro
+// here only routing is done and if the ro
 'use strict';
 
 var crypto = require('crypto');
@@ -9,7 +9,6 @@ var cors = require('cors');
 var dateTime = require('node-datetime');
 var Promises = require('promise');
 
-
 var mongoose = require('mongoose');
 var Photo = require('./models/documents');
 
@@ -18,13 +17,13 @@ var cloudinary = require('cloudinary').v2;
 var multipart = require('connect-multiparty');
 var multipartMiddleware = multipart();
 
-
-//const register = require('./functions/register');
+const register = require('./functions/register');
 const savepolicy = require('./functions/savepolicy');
-//const login = require('./functions/login');
-
-//const profile = require('./functions/profile');
-//const password = require('./functions/password');
+const deletesavepolicy = require('./functions/deletesavepolicy');
+const verifyemail = require('./functions/emailverification');
+const verifyphone = require('./functions/phoneverification');
+// const profile = require('./functions/profile'); const password =
+const nodemailer = require('nodemailer');
 const config = require('./config/config.json');
 
 const consignment = require('./functions/consignment');
@@ -36,19 +35,33 @@ const examineClaim = require('./functions/examineClaim');
 const negotiateClaim = require('./functions/negotiateClaim');
 const approveClaim = require('./functions/approveClaim');
 const settleClaim = require('./functions/settleClaim');
-//const publicAdjusterList = require('./functions/publicAdjusterList');
+const login = require('./functions/login');
+const registerpublicadjuster = require('./functions/registerpublicadjuster');
+const publicAdjusterList = require('./functions/publicAdjusterList');
 const fetchSavePolicy = require('./functions/fetchSavePolicy');
 const date = require('date-and-time');
 
 const fetchClaimlist = require('./functions/fetchClaimlist');
+const Nexmo = require('nexmo');
+const nexmo = new Nexmo({apiKey: '102b95c6', apiSecret: '824bb872d74c7415'});
 
+// connection to email API
+var transporter = nodemailer.createTransport("SMTP", {
+    host: 'smtp.ipage.com',
+    port: 587,
+    secure: true,
+    auth: {
+        user: "vikram.viswanathan@rapidqube.com",
+        pass: "Rpqb@12345"
+    }
+});
 
 module.exports = router => {
 
     router.get('/', (req, res) => res.send("Welcome to commercial-insurance,please hit a service !"));
-    router.post('/registerUser', cors(), (req, res1) => {
-        console.log("entering register function in functions");
 
+    router.post('/registerUser', cors(), (req, res1) => {
+        console.log("entering register function in functions ");
         const emailid = req.body.email;
 
         console.log(emailid);
@@ -64,7 +77,6 @@ module.exports = router => {
             "userObject": userObjects,
             "usertype": usertypeid
         };
-
         var options = {
             url: 'https://apidigi.herokuapp.com/registerUser',
             method: 'POST',
@@ -73,49 +85,31 @@ module.exports = router => {
             },
             json: json
         };
-
-
         if (!emailid || !passwordid || !usertypeid) {
-
-            res1.status(400).json({
-                message: 'Invalid Request !'
-            });
-
+            res1
+                .status(400)
+                .json({message: 'email or password or usertype mustbe filled !'});
         } else {
-
-
-            request(options, function(err, res, body) {
-                if (res && (res.statusCode === 200 || res.statusCode === 201 || res.statusCode === 409)) {
-
-                    res1.status(res.statusCode).json({
-                        message: body.message
-
-                    })
+            request(options, function (err, res, body) {
+                if (res && (res.statusCode === 201 || res.statusCode === 500 || res.statusCode === 409)) {
+                    console.log("message" + body.message);
+                    res1
+                        .status(res.statusCode)
+                        .json({message: body.message})
                 }
-
             });
-
-
-
-
         }
     });
-
-
     router.post('/login', cors(), (req, res1) => {
-        console.log("entering login function in functions");
-
+        console.log("entering login function in functions ");
         const emailid = req.body.email;
         console.log(emailid);
         const passwordid = req.body.password;
         console.log(passwordid);
-
         var json = {
             "email": emailid,
-            "password": passwordid,
-
+            "password": passwordid
         };
-
         var options = {
             url: 'https://apidigi.herokuapp.com/login',
             method: 'POST',
@@ -124,157 +118,113 @@ module.exports = router => {
             },
             json: json
         };
-
-
         if (!emailid || !passwordid) {
-
-            res1.status(400).json({
-                message: 'Invalid Request !'
+            res1
+                .status(400)
+                .json({message: 'Invalid Request!'});
+        } else {
+            request(options, function (err, res, body) {
+                if (res && (res.statusCode === 200 || res.statusCode === 201 || res.statusCode === 401 || res.statusCode === 402 || res.statusCode === 404)) {
+                    res1
+                        .status(res.statusCode)
+                        .json({message: body.message, token: body.token, usertype: body.usertype, userdetails: body.userDetails})
+                }
             });
+        }
+    });
+    // router.post('/registerUser', cors(), (req, res) => {     const email =
+    // req.body.email;     console.log(email);     var emailtosend = email;
+    // console.log(emailtosend);     const password = req.body.password;
+    // console.log(password);     const rapidID = crypto .createHash('sha256')
+    // .update(email)         .digest('base64'); console.log(rapidID);     const
+    // userObject = req.body.userObject; console.log(userObject);     var
+    // phonetosend = userObject.phone;     const usertype = req.body.usertype;
+    // console.log(usertype);     var otp = "";  var possible = "0123456789"; for
+    // (var i = 0; i < 4; i++)         otp +=
+    // possible.charAt(Math.floor(Math.random() * possible.length));     var
+    // remoteHost = "192.168.0.20:8082";     console.log(remoteHost);     var
+    // encodedMail = new Buffer(req.body.email).toString('base64');     if (!email
+    // || !password || !usertype) {         res             .status(400)
+    // .json({message: 'Invalid Request !'});     } else {         register
+    // .registerUser(email, password, rapidID, userObject, usertype, otp,
+    // encodedMail)             .then(result => {                 var link =
+    // "http://" + remoteHost + "/email/verify?mail=" + encodedMail; var otptosend =
+    // otp;                 var mailOptions = { transport: transporter, from:
+    // '"Marin Service"<vikram.viswanathan@rapidqube.com>',         to: emailtosend,
+    //                     subject: 'Please confirm your Email account', html:
+    // "Hello,<br> Please Click on the link to verify your email.<br><a href=" +
+    // link + ">Click here to verify</a>"       }; transporter.sendMail(mailOptions,
+    // (error, info) => { if (error) {}      });               nexmo .message
+    // .sendSms('918983028076', phonetosend, otptosend, { type: 'unicode'         },
+    // (err, responseData) => { if (responseData) { console.log(responseData)   }
+    // });        res .status(result.status) .json({message: "Please verify your
+    // emailid and phone no "})             }) .catch(err =>
+    // res.status(err.status).json({message: err.message}).json({status:
+    // err.status}));     } });
+
+    router.get("/email/verify", cors(), (req, res, next) => {
+        var status;
+        var querymail = req.query.mail;
+        console.log("URL: " + querymail);
+        verifyemail
+            .emailverification(querymail)
+            .then(result => {
+                var status = result.usr.status
+                if (status.length == 2) {
+                    res.send({"status": true, "message": "registration successful"});
+                } else {
+
+                    res.send({"status": false, "message": "please verify mobile no too"});
+                }
+            })
+            .catch(err => res.status(err.status).json({message: err.message}));
+    });
+    router.post("/user/phoneverification", cors(), (req, res1) => {
+        // const phone = parseInt(req.body.phone, 10);
+        const phone = req.body.phone;
+        var otp = req.body.otp;
+        console.log(otp);
+        console.log(phone);
+
+        var json = {
+            "phone": phone,
+            "otp": otp
+        };
+
+        var options = {
+            url: 'https://apidigi.herokuapp.com/user/phoneverification',
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            json: json
+        };
+
+        if (!otp || !phone) {
+
+            res1
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
 
-
-            request(options, function(err, res, body) {
-                if (res && (res.statusCode === 200 || res.statusCode === 201 || res.statusCode === 401 || res.statusCode === 402 || res.statusCode === 404)) {
-
-                    res1.status(res.statusCode).json({
-                        message: body.message,
-                        token: body.token,
-                        usertype: body.usertype,
-                        userdetails: body.userDetails
-
-
-                    })
+            request(options, function (err, res, body) {
+                if (res && (res.statusCode === 200 || res.statusCode === 201 || res.statusCode === 404 || res.statusCode === 409 || res.statusCode === 500)) {
+                    console.log("message" + body.message);
+                    res1
+                        .status(res.statusCode)
+                        .json({message: body.message, status: body.status})
                 }
 
             });
 
-
-
-
         }
     });
-    /*
-        router.post('/registerPublicAdjuster', cors(), (req, res) => {
-
-            const liscenceid = req.body.liscenceid;
-            console.log(liscenceid);
-            const firstname = req.body.firstname;
-            const lastname = req.body.lastname;
-            const email = req.body.email;
-            console.log(email);
-            const phone = req.body.phone;
-            console.log(phone);
-            const password = req.body.password;
-            console.log(password);
-
-
-            if (!liscenceid || !firstname || !lastname || !email || !password || !phone) {
-
-                res.status(400).json({
-                    message: 'Invalid Request !'
-                });
-
-            } else {
-
-                registerpublicadjuster.registerPublicAdjuster(liscenceid, firstname, lastname, email, phone, password)
-
-                .then(result => {
-
-                    res.setHeader('Location', '/users/' + email);
-                    res.status(result.status).json({
-                        message: result.message,
-                        ind: true
-                    })
-                })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
-            }
-        });
-
-        router.post('/login', cors(), (req, res) => {
-
-            const email = req.body.email;
-
-            const password = req.body.password;
-            const policyno = req.body.policyno;
-            if (!email || !password || !email.trim()) {
-
-                res.status(400).json({
-                    message: 'Invalid Request !'
-                });
-
-            } else {
-
-                login.loginUser(email, password)
-
-                .then(result => {
-                    if ('liscenceid' in result.users._doc) {
-
-                        const token = jwt.sign(result, config.secret, {
-                            expiresIn: 144000000
-                        });
-                        res.status(result.status).json({
-                            message: result.message,
-                            token: token,
-                            usertype: "publicadjuster"
-                        });
-
-                    } else if ('examinerid' in result.users._doc) {
-                        const token = jwt.sign(result, config.secret, {
-                            expiresIn: 144000000
-                        });
-                        res.status(result.status).json({
-                            message: result.message,
-                            token: token,
-                            usertype: "examiner"
-                        });
-                    } else if ('claimadjusterid' in result.users._doc) {
-                        const token = jwt.sign(result, config.secret, {
-                            expiresIn: 144000000
-                        });
-                        res.status(result.status).json({
-                            message: result.message,
-                            token: token,
-                            usertype: "claimadjuster"
-                        });
-                    } else {
-                        const token = jwt.sign(result, config.secret, {
-                            expiresIn: 144000000
-                        });
-                        res.status(result.status).json({
-                            message: result.message,
-                            token: token,
-                            usertype: "insured"
-                        });
-                    }
-
-
-                })
-
-
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
-            }
-        });
-    */
-
-    router.post('/testmethod', cors(), function(req, res) {
+    router.post('/testmethod', cors(), function (req, res) {
         const id = checkToken(req)
         console.log(id)
-        res.send({
-            "name": "risabh",
-            "email": "rls@gmail.com"
-        });
+        res.send({"name": "risabh", "email": "rls@gmail.com"});
     });
-
-
-
 
     /* router.get('/users/:id', cors(), (req, res) => {
 
@@ -366,7 +316,13 @@ module.exports = router => {
 
     router.post("/fetchPolicyQuotes", (req, res) => {
         var id = getUserId(req)
-        console.log("id"+id);
+
+        console.log("id" + id);
+        var status = req.body.status;
+        console.log("status" + status);
+        const _id = (req.body._id);
+        console.log("_id" + _id);
+
         var consignmentWeight = (req.body.consignmentWeight);
         console.log("consignmentWeight:" + consignmentWeight);
         var consignmentValue = (req.body.consignmentValue);
@@ -383,29 +339,30 @@ module.exports = router => {
         console.log("policyType:" + policyType);
         var invoiceNo = req.body.invoiceNo;
         console.log("invoiceNo:" + invoiceNo);
-        
-        if (!consignmentWeight || !consignmentValue || !modeofTransport || !packingMode || !consignmentType || !contractType || !policyType || !invoiceNo || !consignmentWeight.trim() || !consignmentValue.trim() || !packingMode.trim() || !consignmentType.trim() || !contractType.trim() || !policyType.trim() || !invoiceNo.trim()) {
 
-            res.status(400).json({
-                "status": false,
-                "message": 'Invalid Request !'
-            });
+        var policyIssueDate = req.body.policyissuedate
+        console.log("policyIssueDate:" + policyIssueDate);
+        var policyEndDate = req.body.policyenddate;
+        console.log("policyEndDate:" + policyEndDate);
+        var voyageStartDate = req.body.voyagestartdate;
+        console.log("voyageStartDate:" + voyageStartDate);
+        var voyageEndDate = req.body.voyageenddate;
+        console.log("voyageEndDate:" + voyageEndDate);
 
+        if (!status || !consignmentWeight || !consignmentValue || !modeofTransport || !packingMode || !consignmentType || !contractType || !policyType || !invoiceNo || !policyIssueDate || !policyEndDate || !voyageStartDate || !voyageEndDate || !consignmentValue.trim() || !packingMode.trim() || !consignmentType.trim() || !contractType.trim() || !policyType.trim() || !invoiceNo.trim() || !policyIssueDate.trim() || !policyEndDate.trim() || !voyageStartDate.trim() || !voyageEndDate.trim()) {
+
+            res
+                .status(400)
+                .json({"status": false, "message": 'Invalid Request !'});
 
         } else {
 
-
-
-
             var policyList;
-            var cifPolicy;
-            var cisPolicy;
-            var cipPolicy;
-            var fobPolicy;
 
-            if (policyType == "cifPolicy") {
+            if (contractType == "CIF") {
 
-                policyList = [{
+                policyList = [
+                    {
                         "policyName": "21st Century Insurance",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -443,8 +400,7 @@ module.exports = router => {
                         "sumInsured": "125000",
                         "premiumPayment": "20000"
 
-                    },
-                    {
+                    }, {
                         "policyName": "Cincinnati Financial",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -453,8 +409,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "225000",
                         "premiumPayment": "55000"
-                    },
-                    {
+                    }, {
                         "policyName": "ICICI Lombard",
                         "Roadways": "False",
                         "Shipping": "False",
@@ -466,9 +421,10 @@ module.exports = router => {
                     }
                 ]
 
-            } else if (policyType == "cisPolicy") {
+            } else if (contractType == "CIS") {
 
-                policyList = [{
+                policyList = [
+                    {
                         "policyName": "Darwin Professional Underwriters, Inc.",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -477,8 +433,7 @@ module.exports = router => {
                         "premiumAmount": "3000",
                         "sumInsured": "150000",
                         "premiumPayment": "60000"
-                    },
-                    {
+                    }, {
                         "policyName": "Eastern Insurance Holdings, Inc.",
                         "Roadways": "False",
                         "Shipping": "True",
@@ -487,8 +442,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "225000",
                         "premiumPayment": "55000"
-                    },
-                    {
+                    }, {
                         "policyName": "EMC Insurance Group, Inc.",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -497,8 +451,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "725000",
                         "premiumPayment": "15000"
-                    },
-                    {
+                    }, {
                         "policyName": "Everest Re Group, Ltd.",
                         "Roadways": "True",
                         "Shipping": "True",
@@ -507,8 +460,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "125000",
                         "premiumPayment": "20000"
-                    },
-                    {
+                    }, {
                         "policyName": "First Mercury Financial Corporation",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -529,8 +481,9 @@ module.exports = router => {
                     }
                 ]
 
-            } else if (policyType == "cipPolicy") {
-                policyList = [{
+            } else if (contractType == "CIP") {
+                policyList = [
+                    {
                         "policyName": "All India Insurance",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -539,8 +492,7 @@ module.exports = router => {
                         "premiumAmount": "1000",
                         "sumInsured": "50000",
                         "premiumPayment": "6000"
-                    },
-                    {
+                    }, {
                         "policyName": "Oriental",
                         "Roadways": "False",
                         "Shipping": "False",
@@ -549,8 +501,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "125000",
                         "premiumPayment": "20000"
-                    },
-                    {
+                    }, {
                         "policyName": "Bristol West Holdings",
                         "Roadways": "False",
                         "Shipping": "True",
@@ -559,8 +510,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "725000",
                         "premiumPayment": "15000"
-                    },
-                    {
+                    }, {
                         "policyName": "Federated National Holding Company",
                         "Roadways": "True",
                         "Shipping": "True",
@@ -569,8 +519,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "125000",
                         "premiumPayment": "20000"
-                    },
-                    {
+                    }, {
                         "policyName": "AmCOMP Incorporated",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -579,8 +528,7 @@ module.exports = router => {
                         "premiumAmount": "1000",
                         "sumInsured": "50000",
                         "premiumPayment": "12000"
-                    },
-                    {
+                    }, {
                         "policyName": "Carolina Group",
                         "Roadways": "False",
                         "Shipping": "True",
@@ -592,9 +540,10 @@ module.exports = router => {
                     }
                 ]
 
-            } else if (policyType == "fobPolicy") {
+            } else if (contractType == "FOB") {
 
-                policyList = [{
+                policyList = [
+                    {
                         "policyName": "ICICI Lombard",
                         "Roadways": "False",
                         "Shipping": "False",
@@ -603,8 +552,7 @@ module.exports = router => {
                         "premiumAmount": "1000",
                         "sumInsured": "50000",
                         "premiumPayment": "60000"
-                    },
-                    {
+                    }, {
                         "policyName": "Oriental",
                         "Roadways": "True",
                         "Shipping": "True",
@@ -613,8 +561,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "125000",
                         "premiumPayment": "20000"
-                    },
-                    {
+                    }, {
                         "policyName": "Everest Re Group, Ltd.",
                         "Roadways": "False",
                         "Shipping": "True",
@@ -623,8 +570,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "725000",
                         "premiumPayment": "15000"
-                    },
-                    {
+                    }, {
                         "policyName": "Eastern Insurance Holdings, Inc.",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -634,8 +580,7 @@ module.exports = router => {
                         "sumInsured": "125000",
                         "premiumPayment": "20000"
 
-                    },
-                    {
+                    }, {
                         "policyName": "Maersk",
                         "Roadways": "True",
                         "Shipping": "False",
@@ -644,8 +589,7 @@ module.exports = router => {
                         "premiumAmount": "5000",
                         "sumInsured": "225000",
                         "premiumPayment": "55000"
-                    },
-                    {
+                    }, {
                         "policyName": "21st Century Insurance",
                         "Roadways": "True",
                         "Shipping": "True",
@@ -658,26 +602,22 @@ module.exports = router => {
                 ]
 
             }
-
-            savepolicy.savePolicy(id, consignmentWeight, consignmentValue, modeofTransport, packingMode, consignmentType, contractType, policyType, invoiceNo)
-
+            savepolicy
+                .savePolicy(id, _id, status, consignmentWeight, consignmentValue, modeofTransport, packingMode, consignmentType, contractType, policyType, invoiceNo, policyIssueDate, policyEndDate, voyageStartDate, voyageEndDate)
                 .then((result) => {
-                    res.status(200).json({
-                        "status": true,
-                        "message": result.message,
-                        "policyList": policyList
-                    });
-                })
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                    console.log("_id" + result._id)
+                    res
+                        .status(200)
+                        .json({"status": true, "message": result.message, "policyList": policyList, "_id": result._id});
 
+                })
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         }
     });
 
-
-    //fetchissuedpolicy - query fetches consignment user input given for payment of consignment.
+    // fetchissuedpolicy - query fetches consignment user input given for payment of
+    // consignment.
     router.get("/fetchissuedpolicy", (req, res) => {
         var issuedPolicies = [];
 
@@ -687,11 +627,9 @@ module.exports = router => {
         if (1 == 1) {
 
             // do some async stuff
-            fetchConsignmentlist.fetch_consignmentlist({
-                    "user": "dhananjay.p",
-                    "getusers": "getusers"
-                })
-                .then(function(result) {
+            fetchConsignmentlist
+                .fetch_consignmentlist({"user": "dhananjay.p"})
+                .then(function (result) {
                     var date = dateTime.create();
                     var formatted = date.format('Y-m-d');
                     var filteredPolicy = [];
@@ -712,45 +650,37 @@ module.exports = router => {
                         issuedPolicies.push({
                             "policyName": filteredPolicy[i].policyname,
                             "issuedDate": formatted,
-                            "premiumAmount": filteredPolicy[i].premiumamount.toString(),
-                            "issuedAmount": filteredPolicy[i].suminsured.toString(),
+                            "premiumAmount": filteredPolicy[i]
+                                .premiumamount
+                                .toString(),
+                            "issuedAmount": filteredPolicy[i]
+                                .suminsured
+                                .toString(),
                             "policyHolderName": filteredPolicy[i].policyholdername,
-                            "policyNumber": filteredPolicy[i].policynumber.toString(),
+                            "policyNumber": filteredPolicy[i]
+                                .policynumber
+                                .toString(),
                             "agentName": filteredPolicy[i].usertype
                         });
                     }
-                 return res.json({
-                     "status": true,
-                        "issuedPolicies": issuedPolicies
-                     });
-                 
+                    return res.json({"status": true, "issuedPolicies": issuedPolicies});
 
                 })
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
-
-
-
-
-            // return res.json({
-            //     "status": true,
-            //     "message": issuedPolicies
-            // });
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         } else {
-            res.status(401).json({
-                "status": false,
-                message: 'cant fetch data !'
-            });
+            res
+                .status(401)
+                .json({"status": false, message: 'cant fetch data !'});
         }
     });
-
 
     router.post("/consignmentDetail", cors(), (req, res) => {
         const id = getUserId(req)
 
         console.log("id" + id);
+        const _id = (req.body._id).toString()
+        console.log("_id" + _id);
         const consignmentWeight = (req.body.consignmentWeight);
         console.log("consignmentWeight:" + consignmentWeight);
         const consignmentValue = (req.body.consignmentValue);
@@ -781,7 +711,7 @@ module.exports = router => {
         console.log("invoiceNo:" + invoiceNo);
         var policyNumber = "";
         var possible = "01234567891011121314151617181920213031404151523548854547585474654987878";
-        for (var i = 0; i < 10; i++)
+        for (var i = 0; i < 10; i++) 
             policyNumber += possible.charAt(Math.floor(Math.random() * possible.length));
         var policyIssueDate = req.body.policyissuedate
         console.log("policyIssueDate:" + policyIssueDate);
@@ -792,142 +722,96 @@ module.exports = router => {
         var voyageEndDate = req.body.voyageenddate;
         console.log("voyageEndDate:" + voyageEndDate);
 
+        if (!consignmentWeight || !consignmentValue || !policyName || !sumInsured || !premiumAmount || !modeofTransport || !packingMode || !consignmentType || !contractType || !policyType || !email || !policyHolderName || !userType || !invoiceNo || !policyIssueDate || !policyEndDate || !voyageStartDate || !voyageEndDate || !consignmentWeight.trim() || !consignmentValue.trim() || !policyName.trim() || !sumInsured.trim() || !premiumAmount.trim() || !packingMode.trim() || !consignmentType.trim() || !contractType.trim() || !policyType.trim() || !email.trim() || !policyHolderName.trim() || !userType.trim() || !invoiceNo.trim() || !policyIssueDate.trim() || !policyEndDate.trim() || !voyageStartDate.trim() || !voyageEndDate.trim()) {
 
-        if (!consignmentWeight || !consignmentValue || !policyName || !sumInsured || !premiumAmount || !modeofTransport || !packingMode || !consignmentType || !contractType || !policyType || !email || !policyHolderName || !userType || !invoiceNo || !policyIssueDate || !policyEndDate || !voyageStartDate || !voyageEndDate || !consignmentWeight.trim() || !consignmentValue.trim() || !policyName.trim() || !sumInsured.trim() || !premiumAmount.trim() || !modeofTransport.trim() || !packingMode.trim() || !consignmentType.trim() || !contractType.trim() || !policyType.trim() || !email.trim() || !policyHolderName.trim() || !userType.trim() || !invoiceNo.trim() || !policyIssueDate.trim() || !policyEndDate.trim() || !voyageStartDate.trim() || !voyageEndDate.trim()) {
-
-            res.status(400).json({
-                "status": false,
-                "message": 'Invalid Request !'
-            });
-
+            res
+                .status(400)
+                .json({"status": false, "message": 'Invalid Request !'});
 
         } else {
+            var message;
+            var promise = new Promises(function (resolve, reject) {
+                deletesavepolicy
+                    .deletesavepolicy(_id)
+                    .then(function (result) {
+                        message = result.message
+                        console.log("message" + message)
+                        resolve(message);
+                    })
+                    .catch(err => res.status(err.status).json({message: err.message}));
+            });
+            promise.then(function (message) {
+                consignment
+                    .consignmentDetail(id, consignmentWeight, consignmentValue, policyName, sumInsured, premiumAmount, modeofTransport, packingMode, consignmentType, contractType, policyType, email, policyHolderName, userType, invoiceNo, policyNumber, policyIssueDate, policyEndDate, voyageStartDate, voyageEndDate)
+                    .then((result) => {
+                        res
+                            .status(200)
+                            .json({"message": "true", "status": "success"});
+                    })
+                    .catch(err => res.status(err.status).json({message: err.message}));
 
-
-
-
-            /* var userResults, emailtosend;
-
-             objBD.query('select * from issuedpolicy WHERE email = ?', [req.body.email], function(error, results, fields) {
-
-                 userResults = JSON.parse(JSON.stringify(results));
-                 console.log("results: " + userResults[0].email);
-                 emailtosend = userResults[0].email;
-
-                 var mailOptions = {
-                     transport: transporter,
-                     from: '"Marin Service"<vikram.viswanathan@rapidqube.com>',
-                     to: emailtosend,
-                     subject: 'Insurance Confirmed',
-                     text: req.body.text,
-                     html: "Thank you for choosing Marin to insure your consignment. Please wait for 4-5 working days to receive your copy of the Insurance Policy Document"
-                 };
-                 transporter.sendMail(mailOptions, (error, info) => {
-                     if (error) {}
-                 });
-             })*/
-            consignment.consignmentDetail(id, consignmentWeight, consignmentValue, policyName, sumInsured, premiumAmount, modeofTransport, packingMode, consignmentType, contractType, policyType, email, policyHolderName, userType, invoiceNo, policyNumber, policyIssueDate, policyEndDate, voyageStartDate, voyageEndDate)
-
-                .then((result) => {
-                    res.status(200).json({
-                        "message": "true",
-                        "status": "success"
-                    });
-                })
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
-
+            });
         }
     });
-
 
     router.get('/fetchSavePolicy', cors(), (req, res) => {
         const userid = getUserId(req)
         console.log(userid);
 
-
-
         if (!userid || !userid.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
+            // the if statement checks if any of the above paramenters are null or not..if
+            // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
 
-
-            fetchSavePolicy.fetchSavePolicy(userid)
-
-                .then(function(result) {
+            fetchSavePolicy
+                .fetchSavePolicy(userid)
+                .then(function (result) {
                     console.log(result)
-                    res.status(result.status).json({
-                        status: result.status,
-                        policylist: result.policylist
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, policylist: result.policylist})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
 
     });
-
-
-
 
     router.post('/notifyClaim', cors(), (req, res) => {
         const userid = getUserId(req)
         const policyno = req.body.policyno;
-
-
         const claim_no1 = Math.floor(Math.random() * (1000 - 1)) + 1;
         const claim_no = claim_no1.toString();
         const claim_title = req.body.title;
         const claim_damagedetails = req.body.damagedetails;
-
-
-
-
         if (!claim_title || !claim_damagedetails || !claim_title.trim() || !claim_damagedetails.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
-
+            // the if statement checks if any of the above paramenters are null or not..if
+            // // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
         } else {
-
-            notifyClaim.notifyClaim(policyno, claim_no, claim_title, claim_damagedetails)
+            notifyClaim
+                .notifyClaim(policyno, claim_no, claim_title, claim_damagedetails)
                 .then(result => {
-
-
-                    res.status(result.status).json({
-                        status: result.status,
-                        message: result.message
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, message: result.message})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
     });
 
-
-
-
     router.get('/claim/Claimlist', (req, res) => {
-
 
         if (checkToken(req)) {
 
-            fetchClaimlist.fetch_Claim_list({
-                    "user": "risabh",
-                    "getclaims": "getclaims"
-                })
-
-                .then(function(result) {
+            fetchClaimlist
+                .fetch_Claim_list({"user": "risabh", "getclaims": "getclaims"})
+                .then(function (result) {
                     var daysDifference = [];
                     var claimDifference = [];
                     for (let i = 0; i < result.claimlist.claimlist.length; i++) {
@@ -948,76 +832,60 @@ module.exports = router => {
                                 total += daysDifference[i];
                             }
                             var averagedays = total / daysDifference.length;
-                            var longest = Math.max.apply(null, daysDifference)
-                            var shortest = Math.min.apply(null, daysDifference)
-
-
+                            var longest = Math
+                                .max
+                                .apply(null, daysDifference)
+                            var shortest = Math
+                                .min
+                                .apply(null, daysDifference)
 
                         }
 
                     }
-                    res.json({
-                        message: "user claims found",
-                        allClaims: result,
-                        Average: averagedays,
-                        Longest: longest,
-                        Shortest: shortest
-                    });
+                    res.json({message: "user claims found", allClaims: result, Average: averagedays, Longest: longest, Shortest: shortest});
                     //res.json(result)
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         } else {
 
-            res.status(401).json({
-                message: 'cant fetch data !'
-            });
+            res
+                .status(401)
+                .json({message: 'cant fetch data !'});
         }
     });
     router.post('/createClaim', cors(), (req, res) => {
         if (checkToken(req)) {
-
-
 
             const claim_no = req.body.claimno
             const totaldamagevalue = req.body.totaldamagevalue;
             const totalclaimvalue = req.body.totalclaimvalue;
             const publicadjusterid = req.body.publicadjusterid;
 
-
-
-
             if (!claim_no || !totaldamagevalue || !totalclaimvalue || !publicadjusterid || !claim_no.trim() || !totaldamagevalue.trim() || !totalclaimvalue.trim() || !publicadjusterid.trim()) {
-                //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-                res.status(400).json({
-                    message: 'Invalid Request !'
-                });
+                // the if statement checks if any of the above paramenters are null or not..if
+                // is the it sends an error report.
+                res
+                    .status(400)
+                    .json({message: 'Invalid Request !'});
 
             } else {
 
-
-                createClaim.createClaim(claim_no, totaldamagevalue, totalclaimvalue, publicadjusterid)
+                createClaim
+                    .createClaim(claim_no, totaldamagevalue, totalclaimvalue, publicadjusterid)
                     .then(result => {
 
-
-                        res.status(result.status).json({
-                            status: result.status,
-                            message: result.message
-                        })
+                        res
+                            .status(result.status)
+                            .json({status: result.status, message: result.message})
                     })
-
-                    .catch(err => res.status(err.status).json({
-                        message: err.message
-                    }));
+                    .catch(err => res.status(err.status).json({message: err.message}));
             }
         } else {
 
-            res.status(401).json({
-                message: 'session timeout !'
-            });
+            res
+                .status(401)
+                .json({message: 'session timeout !'});
         }
     });
 
@@ -1026,114 +894,85 @@ module.exports = router => {
         const claim_no = req.body.claimno;
         const remarks = req.body.remarks;
 
-
-
         if (!claim_no || !userid || !remarks || !claim_no.trim() || !userid.trim() || !remarks.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
+            // the if statement checks if any of the above paramenters are null or not..if
+            // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
 
-
-            rejectClaim.rejectClaim(claim_no, remarks)
+            rejectClaim
+                .rejectClaim(claim_no, remarks)
                 .then(result => {
 
-
-                    res.status(result.status).json({
-                        status: result.status,
-                        message: result.message
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, message: result.message})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
 
     });
 
-
-
-
     router.post('/examineClaim', cors(), (req, res) => {
         const examinerid = getUserId(req)
-
-
 
         const claim_no = req.body.claimno
         const assesseddamagevalue = req.body.assesseddamagevalue;
         const assessedclaimvalue = req.body.assessedclaimvalue;
 
-
-
-
         if (!claim_no || !assesseddamagevalue || !assessedclaimvalue || !examinerid || !claim_no.trim() || !assesseddamagevalue.trim() || !assessedclaimvalue.trim() || !examinerid.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
+            // the if statement checks if any of the above paramenters are null or not..if
+            // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
 
-
-            examineClaim.examineClaim(claim_no, assesseddamagevalue, assessedclaimvalue, examinerid)
+            examineClaim
+                .examineClaim(claim_no, assesseddamagevalue, assessedclaimvalue, examinerid)
                 .then(result => {
 
-
-                    res.status(result.status).json({
-                        status: result.status,
-                        message: result.message
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, message: result.message})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
 
     });
 
-
     router.post('/negotiateClaim', cors(), (req, res) => {
         const id = getUserId(req)
-
-
 
         const claim_no = req.body.claimno
         const negotiationamount = req.body.negotiationamount;
         const asperterm2B = req.body.asperterm2B;
 
-
-
-
         if (!claim_no || !negotiationamount || !asperterm2B || !id || !claim_no.trim() || !negotiationamount.trim() || !asperterm2B.trim() || !id.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
+            // the if statement checks if any of the above paramenters are null or not..if
+            // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
 
-
-            negotiateClaim.negotiateClaim(claim_no, negotiationamount, asperterm2B, id)
+            negotiateClaim
+                .negotiateClaim(claim_no, negotiationamount, asperterm2B, id)
                 .then(result => {
 
-
-                    res.status(result.status).json({
-                        status: result.status,
-                        message: result.message
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, message: result.message})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
 
     });
-
 
     router.post('/approveClaim', cors(), (req, res) => {
         const claimadjusterid = getUserId(req)
@@ -1141,34 +980,26 @@ module.exports = router => {
         //   const claim_no =req.body.claimno;
         var claimnoint = parseInt(claim_no);
 
-
-
-
         if (!claim_no || !claimadjusterid || !claimadjusterid.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
+            // the if statement checks if any of the above paramenters are null or not..if
+            // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
-            approveClaim.approveClaim(claim_no)
+            approveClaim
+                .approveClaim(claim_no)
                 .then(result => {
 
-
-                    res.status(result.status).json({
-                        status: result.status,
-                        message: result.message
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, message: result.message})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
 
     });
-
-
 
     router.post('/approveClaimValue', cors(), (req, res) => {
 
@@ -1177,194 +1008,165 @@ module.exports = router => {
         //   const claim_no =req.body.claimno;
         var claimnoint = parseInt(claim_no);
 
-
         if (1 == 1) {
 
-
-            fetchClaimlist.fetch_Claim_list({
-                    "user": "risabh",
-                    "getclaims": "getclaims"
-                })
-
-
-
-                .then(function(result1) {
-
-
+            fetchClaimlist
+                .fetch_Claim_list({"user": "risabh", "getclaims": "getclaims"})
+                .then(function (result1) {
 
                     for (let i = 0; i < result1.claimlist.claimlist.length; i++) {
 
-
-
                         if (result1.claimlist.claimlist[i].claimno === claimnoint) {
-
 
                             var approveClaimvalue = result1.claimlist.claimlist[i].approvedclaim;
 
-                            return res.status(result1.status).json({
-                                message: "claimvalue found",
-                                approvedclaim: approveClaimvalue
-                            })
+                            return res
+                                .status(result1.status)
+                                .json({message: "claimvalue found", approvedclaim: approveClaimvalue})
                         }
                     }
 
-
-
                 })
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         } else {
 
-            return res.status(401).json({
-                message: 'cant fetch data !'
-            });
+            return res
+                .status(401)
+                .json({message: 'cant fetch data !'});
         }
     });
-
-
 
     router.post('/settleClaim', cors(), (req, res) => {
         const userid = getUserId(req)
         const claim_no = req.body.claimno;
 
-
-
-
         if (!claim_no || !userid || !claim_no.trim() || !userid.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
+            // the if statement checks if any of the above paramenters are null or not..if
+            // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
 
-
-            settleClaim.settleClaim(claim_no)
+            settleClaim
+                .settleClaim(claim_no)
                 .then(result => {
 
-
-                    res.status(result.status).json({
-                        status: result.status,
-                        message: result.message
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, message: result.message})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
 
     });
 
-    router.get('/claim/UserClaims', function(req, res) {
+    router.get('/claim/UserClaims', function (req, res) {
         var issuedPolicies = [];
         var filteredclaims = [];
         var status = [];
         var daysDifference = [];
-        var averagedays, longest, shortest;
+        var averagedays,
+            longest,
+            shortest;
         const id = getUserId(req)
-
         console.log("id" + id);
-
         if (1 == 1) {
-            var promise = new Promises(function(resolve, reject) {
-                fetchConsignmentlist.fetch_consignmentlist({
-                    "user": "dhananjay.p",
-                    "getusers": "getusers"
-                }).then(function(result) {
-                    var filteredPolicy = [];
-                    var bodystr = result.consignmentlist.consignmentlist;
-                    var bodyObj = bodystr
-                    console.log("length" + bodyObj.length);
-                    for (let i = 0; i < bodyObj.length; i++) {
-                        if (bodyObj[i].id === id) {
-                            filteredPolicy.push(bodyObj[i]);
-                            console.log(filteredPolicy.length)
+            var promise = new Promises(function (resolve, reject) {
+                fetchConsignmentlist
+                    .fetch_consignmentlist({"user": "dhananjay.p", "getusers": "getusers"})
+                    .then(function (result) {
+                        var filteredPolicy = [];
+                        var bodystr = result.consignmentlist.consignmentlist;
+                        var bodyObj = bodystr
+                        console.log("length" + bodyObj.length);
+                        for (let i = 0; i < bodyObj.length; i++) {
+                            if (bodyObj[i].id === id) {
+                                filteredPolicy.push(bodyObj[i]);
+                                console.log(filteredPolicy.length)
+                            }
                         }
-                    }
-                    for (let i = 0; i < filteredPolicy.length; i++) {
-                        issuedPolicies.push({
-                            "policyNumber": filteredPolicy[i].policynumber
-                        });
-                    }
-                    resolve(issuedPolicies);
-                }).catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                        for (let i = 0; i < filteredPolicy.length; i++) {
+                            issuedPolicies.push({"policyNumber": filteredPolicy[i].policynumber});
+                        }
+                        resolve(issuedPolicies);
+                    })
+                    .catch(err => res.status(err.status).json({message: err.message}));
             });
-            promise.then(function(issuedPolicies) {
-                console.log("entry in 2nd fetch")
-                fetchClaimlist.fetch_Claim_list({
-                    "user": "risabh",
-                    "getclaims": "getclaims"
-                }).then(function(result) {
-                    console.log("result array data" + result.claimlist.claimlist);
-                    console.log("length of result array" + result.claimlist.claimlist.length);
-                    for (let i = 0; i < result.claimlist.claimlist.length; i++) {
-                        console.log("id" + id);
-                        console.log("policynumber" + result.claimlist.claimlist[i].policynumber);
-                        for (let j = 0; j < issuedPolicies.length; j++) {
-                            if (result.claimlist.claimlist[i].policynumber === issuedPolicies[j].policyNumber) {
-                                console.log("userid" + result.claimlist.claimlist[i].policynumber);
-                                filteredclaims.push(result.claimlist.claimlist[i]);
-                                status.push(result.claimlist.claimlist[i].status);
-                                var countstatus = count(status);
-                                console.log("countstatus" + countstatus);
-                                console.log("filteredclaims array " + filteredclaims);
-                                if (result.claimlist.claimlist[i].claimsettleddate !== "0001-01-01T00:00:00Z") {
-                                    var date1 = new Date(result.claimlist.claimlist[i].claimnotifieddate);
-                                    console.log("date1" + date1);
-                                    var date2 = new Date(result.claimlist.claimlist[i].claimsettleddate);
-                                    console.log("date1" + date2);
-                                    var timeDiff = Math.abs(date2.getTime() - date1.getTime());
-                                    var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
-                                    console.log("diffDays" + diffDays);
-                                    daysDifference.push(diffDays)
-                                    console.log("daysDifference" + daysDifference);
-                                    var total = 0;
-                                    for (let i = 0; i < daysDifference.length; i++) {
-                                        total += daysDifference[i];
+            promise.then(function (issuedPolicies) {
+                console.log("entry in 2nd fetch ")
+                fetchClaimlist
+                    .fetch_Claim_list({" user ": " risabh ", " getclaims ": " getclaims "})
+                    .then(function (result) {
+                        console.log("result array data " + result.claimlist.claimlist);
+                        console.log(" length of result array " + result.claimlist.claimlist.length);
+                        for (let i = 0; i < result.claimlist.claimlist.length; i++) {
+                            console.log("id" + id);
+                            console.log("policynumber" + result.claimlist.claimlist[i].policynumber);
+                            for (let j = 0; j < issuedPolicies.length; j++) {
+                                if (result.claimlist.claimlist[i].policynumber === issuedPolicies[j].policyNumber) {
+                                    console.log("userid" + result.claimlist.claimlist[i].policynumber);
+                                    filteredclaims.push(result.claimlist.claimlist[i]);
+
+                                    status.push(result.claimlist.claimlist[i].status);
+                                    var countstatus = count(status);
+                                    console.log("countstatus" + countstatus);
+                                    console.log("filteredclaims array " + filteredclaims);
+                                    if (result.claimlist.claimlist[i].claimsettleddate !== "0001-01-01T00:00:00Z") {
+                                        var date1 = new
+                                        Date(result.claimlist.claimlist[i].claimnotifieddate);
+                                        console.log("date1" + date1);
+                                        var date2 = new
+                                        Date(result.claimlist.claimlist[i].claimsettleddate);
+                                        console.log("date1" + date2);
+                                        var timeDiff = Math.abs(date2.getTime() - date1.getTime());
+                                        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+                                        console.log("diffDays" + diffDays);
+                                        daysDifference.push(diffDays)
+                                        console.log("daysDifference" + daysDifference);
+                                        var total = 0;
+                                        for (let i = 0; i < daysDifference.length; i++) {
+                                            total += daysDifference[i];
+                                        }
+                                        averagedays = total / daysDifference.length;
+                                        longest = Math
+                                            .max
+                                            .apply(null, daysDifference)
+                                        shortest = Math
+                                            .min
+                                            .apply(null, daysDifference)
                                     }
-                                    averagedays = total / daysDifference.length;
-                                    longest = Math.max.apply(null, daysDifference)
-                                    shortest = Math.min.apply(null, daysDifference)
                                 }
                             }
                         }
-                    }
-                    var jsonObject = {
-                        message: "user claims found",
-                        userClaims: filteredclaims,
-                        statuscount: countstatus,
-                        Average: averagedays,
-                        Longest: longest,
-                        Shortest: shortest
-                    };
-                    //resolve(jsonObject);
-                    return res.json({
-                        message: "user claims found",
-                        userClaims: filteredclaims,
-                        statuscount: countstatus,
-                        Average: averagedays,
-                        Longest: longest,
-                        Shortest: shortest
-                    });
-                }).catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                        var jsonObject = {
+                            message: "user claims found ",
+                            userClaims: filteredclaims,
+                            statuscount: countstatus,
+                            Average: averagedays,
+                            Longest: longest,
+                            Shortest: shortest
+                        };
+                        //resolve(jsonObject);
+                        return res.json({
+                            message: "user claimsfound ",
+                            userClaims: filteredclaims,
+                            statuscount: countstatus,
+                            Average: averagedays,
+                            Longest: longest,
+                            Shortest: shortest
+                        });
+                    })
+                    .catch(err => res.status(err.status).json({message: err.message}));
             });
         } else {
-
-            return res.status(401).json({
-                message: 'cant fetch data !'
-            });
+            return res
+                .status(401)
+                .json({message: 'cant fetch data !'});
         }
-
     });
-
-
 
     router.get('/claim/ExaminerClaims', (req, res) => {
 
@@ -1373,13 +1175,9 @@ module.exports = router => {
         console.log("id" + id);
         if (1 == 1) {
 
-
-            fetchClaimlist.fetch_Claim_list({
-                    "user": "risabh",
-                    "getclaims": "getclaims"
-                })
-
-                .then(function(result) {
+            fetchClaimlist
+                .fetch_Claim_list({"user": "risabh", "getclaims": "getclaims"})
+                .then(function (result) {
                     console.log("result array data" + result.claimlist.claimlist);
 
                     var filteredclaims = [];
@@ -1418,14 +1216,15 @@ module.exports = router => {
                                             total += daysDifference[i];
                                         }
                                         var averagedays = total / daysDifference.length;
-                                        var longest = Math.max.apply(null, daysDifference)
-                                        var shortest = Math.min.apply(null, daysDifference)
-
-
+                                        var longest = Math
+                                            .max
+                                            .apply(null, daysDifference)
+                                        var shortest = Math
+                                            .min
+                                            .apply(null, daysDifference)
 
                                     }
                                 }
-
 
                             }
                             if (result.claimlist.claimlist[i].status == "Notified") {
@@ -1435,7 +1234,6 @@ module.exports = router => {
                             if (result.claimlist.claimlist[i].examinerid === id) {
                                 status.push(result.claimlist.claimlist[i].status);
                                 countstatus = count(status);
-
 
                             }
                         }
@@ -1450,19 +1248,15 @@ module.exports = router => {
 
                     });
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         } else {
 
-            return res.status(401).json({
-                message: 'cant fetch data !'
-            });
+            return res
+                .status(401)
+                .json({message: 'cant fetch data !'});
         }
     });
-
 
     router.get('/claim/ClaimAdjusterClaims', (req, res) => {
 
@@ -1471,13 +1265,9 @@ module.exports = router => {
         console.log("id" + id);
         if (1 == 1) {
 
-
-            fetchClaimlist.fetch_Claim_list({
-                    "user": "risabh",
-                    "getclaims": "getclaims"
-                })
-
-                .then(function(result) {
+            fetchClaimlist
+                .fetch_Claim_list({"user": "risabh", "getclaims": "getclaims"})
+                .then(function (result) {
                     console.log("result array data" + result.claimlist.claimlist);
 
                     var filteredclaims = [];
@@ -1526,14 +1316,15 @@ module.exports = router => {
                                             total += daysDifference[i];
                                         }
                                         var averagedays = total / daysDifference.length;
-                                        var longest = Math.max.apply(null, daysDifference)
-                                        var shortest = Math.min.apply(null, daysDifference)
-
-
+                                        var longest = Math
+                                            .max
+                                            .apply(null, daysDifference)
+                                        var shortest = Math
+                                            .min
+                                            .apply(null, daysDifference)
 
                                     }
                                 }
-
 
                             }
 
@@ -1541,7 +1332,6 @@ module.exports = router => {
                                 status.push(result.claimlist.claimlist[i].status);
                                 countstatus = count(status);
                             }
-
 
                         }
                     }
@@ -1555,16 +1345,13 @@ module.exports = router => {
 
                     });
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         } else {
 
-            return res.status(401).json({
-                message: 'cant fetch data !'
-            });
+            return res
+                .status(401)
+                .json({message: 'cant fetch data !'});
         }
     });
 
@@ -1575,13 +1362,9 @@ module.exports = router => {
         console.log("id" + id);
         if (1 == 1) {
 
-
-            fetchClaimlist.fetch_Claim_list({
-                    "user": "risabh",
-                    "getclaims": "getclaims"
-                })
-
-                .then(function(result) {
+            fetchClaimlist
+                .fetch_Claim_list({"user": "risabh", "getclaims": "getclaims"})
+                .then(function (result) {
                     console.log("result array data" + result.claimlist.claimlist);
 
                     var filteredclaims = [];
@@ -1611,7 +1394,6 @@ module.exports = router => {
 
                                 countstatus = count(status);
 
-
                                 console.log("filteredclaims array " + filteredclaims);
                                 for (let i = 0; i < filteredclaims.length; i++) {
                                     if (filteredclaims[i].claimsettleddate !== "0001-01-01T00:00:00Z") {
@@ -1630,14 +1412,15 @@ module.exports = router => {
                                             total += daysDifference[i];
                                         }
                                         var averagedays = total / daysDifference.length;
-                                        var longest = Math.max.apply(null, daysDifference)
-                                        var shortest = Math.min.apply(null, daysDifference)
-
-
+                                        var longest = Math
+                                            .max
+                                            .apply(null, daysDifference)
+                                        var shortest = Math
+                                            .min
+                                            .apply(null, daysDifference)
 
                                     }
                                 }
-
 
                             }
 
@@ -1660,37 +1443,28 @@ module.exports = router => {
                     });
 
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         } else {
 
-            return res.status(401).json({
-                message: 'cant fetch data !'
-            });
+            return res
+                .status(401)
+                .json({message: 'cant fetch data !'});
         }
     });
 
-    cloudinary.config({
-        cloud_name: 'diyzkcsmp',
-        api_key: '188595956976777',
-        api_secret: 'F7ajPhx0uHdohqfbjq2ykBZcMiw'
+    cloudinary.config({cloud_name: 'diyzkcsmp', api_key: '188595956976777', api_secret: 'F7ajPhx0uHdohqfbjq2ykBZcMiw'});
 
-    });
-
-    router.post('/UploadDocs', multipartMiddleware, function(req, res, next) {
+    router.post('/UploadDocs', multipartMiddleware, function (req, res, next) {
         const id = getUser(req)
         var photo = new Photo(req.body);
         console.log("req.files.image" + JSON.stringify(req.files));
         var imageFile = req.files.file.path;
 
-
-        cloudinary.uploader.upload(imageFile, {
-                tags: 'express_sample'
-            })
-            .then(function(image) {
+        cloudinary
+            .uploader
+            .upload(imageFile, {tags: 'express_sample'})
+            .then(function (image) {
                 console.log('** file uploaded to Cloudinary service');
                 console.dir(image);
                 photo.url = image.url;
@@ -1698,14 +1472,11 @@ module.exports = router => {
                 // Save photo with image metadata
                 return photo.save();
             })
-            .then(function(photo) {
+            .then(function (photo) {
 
-                res.send({
-                    url: photo._doc.url,
-                    message: "files uploaded succesfully"
-                });
+                res.send({url: photo._doc.url, message: "files uploaded succesfully"});
             })
-            .finally(function() {
+            . finally(function () {
 
                 res.render('photos/create_through_server', {
                     photo: photo,
@@ -1716,9 +1487,8 @@ module.exports = router => {
 
     router.get('/images/id', cors(), (req, res) => {
         const id = req.query.userid
-        Photo.find({
-                "userid": id
-            })
+        Photo
+            .find({"userid": id})
             .then((images) => {
                 var image = [];
                 for (let i = 0; i < images.length; i++) {
@@ -1726,13 +1496,8 @@ module.exports = router => {
 
                 }
 
-                res.send({
-
-                    images: image,
-                    message: "image fetched succesfully"
-                });
+                res.send({images: image, message: "image fetched succesfully"});
             })
-
 
     });
 
@@ -1740,80 +1505,55 @@ module.exports = router => {
         const userid = getUserId(req)
         console.log(userid);
 
-
-
         if (!userid || !userid.trim()) {
-            //the if statement checks if any of the above paramenters are null or not..if is the it sends an error report.
-            res.status(400).json({
-                message: 'Invalid Request !'
-            });
+            // the if statement checks if any of the above paramenters are null or not..if
+            // is the it sends an error report.
+            res
+                .status(400)
+                .json({message: 'Invalid Request !'});
 
         } else {
 
-
-            publicAdjusterList.publicAdjusterList(userid)
-
-                .then(function(result) {
+            publicAdjusterList
+                .publicAdjusterList(userid)
+                .then(function (result) {
                     console.log(result)
-                    res.status(result.status).json({
-                        status: result.status,
-                        message: result.usr
-                    })
+                    res
+                        .status(result.status)
+                        .json({status: result.status, message: result.usr})
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
         }
 
     });
 
-
-
     function getUserId(req) {
-
         const token = req.headers['x-access-token'];
-
         if (token) {
-
             try {
-
                 var decoded = jwt.verify(token, config.secret);
                 return decoded.users[0].rapidID
-
             } catch (err) {
-
                 return false;
             }
-
         } else {
-
             return failed;
         }
     }
 
     function getUser(req) {
-
         const token = req.query.token;
-
         if (token) {
-
             try {
-
                 var decoded = jwt.verify(token, config.secret);
                 return decoded.users[0].rapidID
-
             } catch (err) {
-
                 return false;
             }
-
         } else {
-
             return failed;
         }
     }
-
 
     function checkToken(req) {
 
@@ -1837,24 +1577,16 @@ module.exports = router => {
         }
     }
 
-
-
     function filterstatus(status) {
 
         if (1 == 1) {
 
-
-            fetchClaimlist.fetch_Claim_list({
-                    "user": "risabh",
-                    "getclaims": "getclaims"
-                })
-
-                .then(function(result) {
-
+            fetchClaimlist
+                .fetch_Claim_list({"user": "risabh", "getclaims": "getclaims"})
+                .then(function (result) {
 
                     console.log("result" + result.claimlist.body.claimlist)
                     var statusfilter = [];
-
 
                     for (let i = 0; i < result.claimlist.body.claimlist.length; i++) {
                         console.log("status" + status);
@@ -1864,28 +1596,19 @@ module.exports = router => {
                             statusfilter.push(result.claimlist.body.claimlist[i].status);
                             console.log("statusfilter" + statusfilter);
 
-
-
-
                         }
                     }
                     return statusfilter;
                 })
-
-                .catch(err => res.status(err.status).json({
-                    message: err.message
-                }));
+                .catch(err => res.status(err.status).json({message: err.message}));
 
         } else {
-            return res.status(401).json({
-                message: 'cant fetch data !'
-            });
-
+            return res
+                .status(401)
+                .json({message: 'cant fetch data !'});
 
         }
     }
-
-
 
     function count(arr) {
         var statusname = [],
@@ -1906,11 +1629,7 @@ module.exports = router => {
         var result = [];
         for (var status in statusname) {
 
-
-            result.push({
-                statusname: statusname[status],
-                statuscount: statuscount[status]
-            });
+            result.push({statusname: statusname[status], statuscount: statuscount[status]});
         }
 
         return result;
