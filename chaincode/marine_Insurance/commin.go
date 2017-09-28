@@ -76,6 +76,7 @@ type AllConsignment struct{
 }
 
 type Claim struct {
+	InsuredId           string  `json:"insuredid"`
 	PolicyNumber        int     `json:"policynumber"`
     ClaimNo             int      `json:"claimno"`
 	ExaminerId          string      `json:"examinerid"`
@@ -470,7 +471,7 @@ func (t *SimpleChaincode) notifyClaim(stub shim.ChaincodeStubInterface, args []s
 	var err error
 
 	
-		if len(args) != 4 {
+		if len(args) != 5 {
 			return shim.Error("Incorrect number of arguments. Expecting 4")
 		}
 
@@ -490,6 +491,9 @@ func (t *SimpleChaincode) notifyClaim(stub shim.ChaincodeStubInterface, args []s
 	if len(args[3]) <= 0 {
 		return shim.Error("4th argument must be a non-empty string")
 	}
+	if len(args[4]) <= 0 {
+		return shim.Error("5th argument must be a non-empty string")
+	}
 		
 	
 	claim:=Claim{}
@@ -505,6 +509,7 @@ func (t *SimpleChaincode) notifyClaim(stub shim.ChaincodeStubInterface, args []s
 	
 	claim.Title = args[2]
 	claim.DamageDetails=args[3]
+	claim.InsuredId=args[4]
 	claim.ClaimNotifiedDate=time.Now()
     claim.Status="Notified"
 	
