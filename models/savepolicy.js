@@ -15,7 +15,11 @@ const policySchema = mongoose.Schema({
     contractType: String,
     policyType: String,
 
-    invoiceNo: Number
+    invoiceNo: Number,
+    policyIssueDate: String,
+    policyEndDate: String,
+    voyageStartDate: String,
+    voyageEndDate: String
 });
 
 mongoose.Promise = global.Promise;
