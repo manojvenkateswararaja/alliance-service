@@ -180,8 +180,8 @@ module.exports = router => {
             .catch(err => res.status(err.status).json({message: err.message}));
     });
     router.post("/user/phoneverification", cors(), (req, res1) => {
-        // const phone = parseInt(req.body.phone, 10);
-        const phone = req.body.phone;
+        const phone = parseInt(req.body.phone, 10);
+        //const phone = req.body.phone;
         var otp = req.body.otp;
         console.log(otp);
         console.log(phone);
