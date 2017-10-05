@@ -2,32 +2,27 @@
 
 const user = require('../models/user');
 
-exports.publicAdjusterList = (userid) => {
+exports.publicadjusterList = (userid) => {
 
     return new Promise((resolve, reject) => {
 
-
-
-        user.find({
-                "liscenceid": {
-                    "$exists": true
-                }
-            }, {
-                "firstname": 1,
-                "lastname": 1,
-                "_id": 1
-            })
-            .then((users) => {
-
-                console.log(users)
-
+        user
+            .find({usertype:"Public Adjuster"},{
+                '_id':0,
+              'rapidID':1,  
+             'userObject.fname':1,
+             'userObject.lname':1
+}
+            )
+            .then(users => {
+                console.log("users", users)
+               
                 resolve({
                     status: 201,
                     usr: users
                 })
 
             })
-
             .catch(err => {
 
                 if (err.code == 11000) {
