@@ -23,6 +23,6 @@ const policySchema = mongoose.Schema({
 });
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://rpqbci:rpqb123@ds163721.mlab.com:63721/commercialinsurance', {useMongoClient: true});
+mongoose.connect('mongodb://rpqb:rpqb123@ds131583.mlab.com:31583/digitalid', { useMongoClient: true });
 
 module.exports = mongoose.model('savepolicy', policySchema);
