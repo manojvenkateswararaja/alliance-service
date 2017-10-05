@@ -37,7 +37,7 @@ const approveClaim = require('./functions/approveClaim');
 const settleClaim = require('./functions/settleClaim');
 const login = require('./functions/login');
 const registerpublicadjuster = require('./functions/registerpublicadjuster');
-const publicAdjusterList = require('./functions/publicAdjusterList');
+const registerpublicadjuster = require('./functions/registerpublicadjuster');
 const fetchSavePolicy = require('./functions/fetchSavePolicy');
 const date = require('date-and-time');
 
@@ -1487,8 +1487,8 @@ module.exports = router => {
 
         } else {
 
-            publicAdjusterList
-                .publicAdjusterList(userid)
+            publicadjusterList
+                .publicadjusterList(userid)
                 .then(function (result) {
                     console.log(result)
                     res
