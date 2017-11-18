@@ -1,4 +1,4 @@
-// This is just a sample script. Paste your real code (javascript or HTML) here.
+// This is just a sample script. Paste your real code (javascript or HTML) here.192.168.0.129
 // here only routing is done and if the ro
 'use strict';
 
@@ -21,7 +21,7 @@ const register = require('./functions/register');
 const savepolicy = require('./functions/savepolicy');
 const deletesavepolicy = require('./functions/deletesavepolicy');
 const verifyemail = require('./functions/emailverification');
-const verifyphone = require('./functions/phoneverification');
+//const verifyphone = require('./functions/phoneverification');
 // const profile = require('./functions/profile'); const password =
 const nodemailer = require('nodemailer');
 const config = require('./config/config.json');
@@ -36,8 +36,8 @@ const negotiateClaim = require('./functions/negotiateClaim');
 const approveClaim = require('./functions/approveClaim');
 const settleClaim = require('./functions/settleClaim');
 const login = require('./functions/login');
-const registerpublicadjuster = require('./functions/registerpublicadjuster');
-const registerpublicadjuster = require('./functions/registerpublicadjuster');
+//const registerpublicadjuster = require('./functions/registerpublicadjuster');
+//const registerpublicadjuster = require('./functions/registerpublicadjuster');
 const fetchSavePolicy = require('./functions/fetchSavePolicy');
 const date = require('date-and-time');
 
@@ -1430,6 +1430,7 @@ module.exports = router => {
 
     router.post('/UploadDocs', multipartMiddleware, function (req, res, next) {
         const id = getUser(req)
+        console.log("id"+ id)
         var photo = new Photo(req.body);
         console.log("req.files.image" + JSON.stringify(req.files));
         var imageFile = req.files.file.path;
@@ -1461,7 +1462,7 @@ module.exports = router => {
     router.get('/images/id', cors(), (req, res) => {
         const id = req.query.userid
         Photo
-            .find({"userid": id})
+            .find()
             .then((images) => {
                 var image = [];
                 for (let i = 0; i < images.length; i++) {
@@ -1502,6 +1503,7 @@ module.exports = router => {
 
     function getUserId(req) {
         const token = req.headers['x-access-token'];
+      
         if (token) {
             try {
                 var decoded = jwt.verify(token, config.secret);
@@ -1516,6 +1518,8 @@ module.exports = router => {
 
     function getUser(req) {
         const token = req.query.token;
+          console.log("******************"+req.headers);
+          console.log("******************"+req.query.token);
         if (token) {
             try {
                 var decoded = jwt.verify(token, config.secret);

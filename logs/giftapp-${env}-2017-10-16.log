@@ -1,0 +1,1483 @@
+[32m[2017-10-16 10:44:52.264] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 10:44:52.266] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 10:44:52.266] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 10:44:52 GMT+0530 (IST) <<<
+[32m[2017-10-16 10:44:52.267] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 10:44:52.267] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 10:44:52.267] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 10:44:52.267] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 10:44:52.267] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 10:44:52.268] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 10:44:52.268] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 10:44:52.269] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 10:44:52.269] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 10:44:52.274] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 10:44:52.275] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 10:44:52.275] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 10:44:52.275] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 10:44:55.301] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 10:44:55.307] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 10:44:55.307] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 10:44:55.308] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 10:44:55.309] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 10:44:55.314] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 10:44:55.316] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 10:44:55.399] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 10:44:55.409] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 10:44:55.410] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 10:44:55.717] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 10:44:55.728] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 10:44:55.728] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 10:44:55.729] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 10:44:55.732] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 10:44:55.732] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 10:44:56.109] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 10:44:56.130] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 10:44:56.131] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 10:44:56.134] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 10:44:56.134] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 10:48:20.477] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 10:48:20.477] [INFO] console - [39m******************undefined
+[31m[2017-10-16 10:48:20.485] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 10:56:27.811] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 10:56:27.811] [INFO] console - [39mundefined
+[32m[2017-10-16 10:56:27.811] [INFO] console - [39mundefined
+[31m[2017-10-16 10:57:07.783] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[32m[2017-10-16 10:58:09.054] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 10:58:09.055] [INFO] console - [39marun.hossamani@rapidqube.com
+[32m[2017-10-16 10:58:09.055] [INFO] console - [39m123456
+[32m[2017-10-16 11:00:07.943] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:00:07.943] [INFO] console - [39m******************undefined
+[31m[2017-10-16 11:00:07.947] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 11:00:19.981] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:00:19.982] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:00:19.983] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:00:19 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:00:19.983] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:00:19.983] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:00:19.983] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:00:19.983] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:00:19.984] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:00:19.984] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:00:19.985] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:00:19.986] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:00:19.986] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:00:19.996] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:00:19.996] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:00:19.997] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:00:19.997] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:00:20.785] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:00:20.791] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:00:20.791] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:00:20.792] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:00:20.792] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:00:20.796] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:00:20.799] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:00:20.884] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:00:20.899] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:00:20.899] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:00:21.098] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:00:21.111] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:00:21.111] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:00:21.111] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:00:21.114] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:00:21.114] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:00:21.303] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:00:21.314] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:00:21.316] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:00:21.319] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:00:21.319] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 11:00:26.056] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:00:26.056] [INFO] console - [39m******************undefined
+[31m[2017-10-16 11:00:26.073] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 11:02:48.967] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:02:48.968] [INFO] console - [39m******************undefined
+[31m[2017-10-16 11:02:48.973] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 11:03:03.551] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:03:03.553] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:03:03.554] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:03:03 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:03:03.554] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:03:03.554] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:03:03.554] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:03:03.554] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:03:03.555] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:03:03.555] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:03:03.556] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:03:03.557] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:03:03.557] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:03:03.567] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:03:03.567] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:03:03.567] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:03:03.568] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:03:04.517] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:03:04.521] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:03:04.522] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:03:04.522] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:03:04.523] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:03:04.526] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:03:04.527] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:03:04.615] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:03:04.626] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:03:04.626] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:03:04.801] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:03:04.813] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:03:04.813] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:03:04.813] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:03:04.816] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:03:04.816] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:03:04.986] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:03:04.997] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:03:04.998] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:03:05.001] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:03:05.002] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 11:03:18.110] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:03:18.110] [INFO] console - [39m******************undefined
+[31m[2017-10-16 11:03:18.116] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 11:10:07.490] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:10:07.491] [INFO] console - [39m******************undefined
+[31m[2017-10-16 11:10:07.496] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 11:10:22.167] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:10:22.183] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:10:22.183] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:10:22 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:10:22.183] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:10:22.183] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:10:22.184] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:10:22.184] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:10:22.184] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:10:22.184] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:10:22.185] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:10:22.185] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:10:22.185] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:10:22.193] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:10:22.193] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:10:22.194] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:10:22.194] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:10:22.937] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:10:22.942] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:10:22.942] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:10:22.943] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:10:22.944] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:10:22.947] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:10:22.949] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:10:23.044] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:10:23.056] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:10:23.056] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:10:23.233] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:10:23.244] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:10:23.245] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:10:23.245] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:10:23.248] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:10:23.248] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:10:23.417] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:10:23.430] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:10:23.431] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:10:23.435] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:10:23.436] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 11:13:00.564] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:13:00.565] [INFO] console - [39m******************undefined
+[31m[2017-10-16 11:13:00.572] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 11:13:11.119] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:13:11.121] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:13:11.121] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:13:11 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:13:11.121] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:13:11.122] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:13:11.122] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:13:11.122] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:13:11.122] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:13:11.122] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:13:11.123] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:13:11.123] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:13:11.123] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:13:11.134] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:13:11.134] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:13:11.135] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:13:11.135] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:13:12.400] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:13:12.408] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:13:12.408] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:13:12.409] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:13:12.410] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:13:12.414] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:13:12.416] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:13:12.507] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:13:12.518] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:13:12.518] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:13:12.706] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:13:12.719] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:13:12.720] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:13:12.720] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:13:12.723] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:13:12.723] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:13:12.891] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:13:12.902] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:13:12.902] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:13:12.905] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:13:12.906] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 11:13:14.618] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:13:14.618] [INFO] console - [39m******************undefined
+[31m[2017-10-16 11:13:14.628] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 11:16:03.382] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:16:03.384] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:16:03.385] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:16:03 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:16:03.385] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:16:03.385] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:16:03.385] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:16:03.385] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:16:03.385] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:16:03.386] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:16:03.386] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:16:03.387] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:16:03.387] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:16:03.394] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:16:03.395] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:16:03.395] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:16:03.396] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:16:04.954] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:16:04.959] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:16:04.959] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:16:04.960] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:16:04.960] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:16:04.963] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:16:04.964] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:16:05.054] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:16:05.066] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:16:05.067] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:16:05.352] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:16:05.365] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:16:05.365] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:16:05.366] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:16:05.369] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:16:05.369] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:16:05.646] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:16:05.657] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:16:05.658] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:16:05.662] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:16:05.663] [INFO] console - [39mserver is running on8082
+[31m[2017-10-16 11:17:04.920] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[32m[2017-10-16 11:20:19.059] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:20:19.061] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:20:19.062] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:20:19 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:20:19.062] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:20:19.062] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:20:19.062] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:20:19.063] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:20:19.063] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:20:19.063] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:20:19.064] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:20:19.065] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:20:19.065] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:20:19.074] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:20:19.074] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:20:19.075] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:20:19.075] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:20:20.014] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:20:20.019] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:20:20.019] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:20:20.020] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:20:20.020] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:20:20.023] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:20:20.024] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:20:20.113] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:20:20.129] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:20:20.129] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:20:20.337] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:20:20.349] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:20:20.350] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:20:20.350] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:20:20.353] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:20:20.354] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:20:20.565] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:20:20.579] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:20:20.580] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:20:20.583] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:20:20.584] [INFO] console - [39mserver is running on8082
+[31m[2017-10-16 11:20:26.432] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[32m[2017-10-16 11:28:04.179] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:28:04.181] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:28:04.182] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:28:04 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:28:04.182] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:28:04.182] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:28:04.183] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:28:04.183] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:28:04.184] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:28:04.184] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:28:04.185] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:28:04.185] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:28:04.186] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:28:04.194] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:28:04.194] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:28:04.195] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:28:04.195] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:28:05.091] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:28:05.097] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:28:05.097] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:28:05.098] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:28:05.099] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:28:05.103] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:28:05.105] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:28:05.186] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:28:05.197] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:28:05.197] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:28:05.421] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:28:05.433] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:28:05.433] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:28:05.434] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:28:05.437] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:28:05.437] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:28:05.667] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:28:05.680] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:28:05.681] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:28:05.684] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:28:05.685] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 11:29:11.503] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:29:11.503] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTMxNjkxLCJleHAiOjE1MDgxOTE2OTF9.WsofRPWBWPVnDatlUjZSUZtrM_EmE2MLRQ7l2k2RBTQ
+[32m[2017-10-16 11:29:11.506] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 11:29:11.510] [INFO] console - [39mreq.files.image{}
+[31m[2017-10-16 11:29:11.516] [ERROR] console - [39mTypeError: Cannot read property 'path' of undefined
+    at /home/manoj/alliance-service/routes.js:1436:39
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+[32m[2017-10-16 11:37:07.114] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:37:07.115] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTMxNjkxLCJleHAiOjE1MDgxOTE2OTF9.WsofRPWBWPVnDatlUjZSUZtrM_EmE2MLRQ7l2k2RBTQ
+[32m[2017-10-16 11:37:07.117] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 11:37:07.118] [INFO] console - [39mreq.files.image{}
+[31m[2017-10-16 11:37:07.120] [ERROR] console - [39mTypeError: Cannot read property 'path' of undefined
+    at /home/manoj/alliance-service/routes.js:1436:39
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+[32m[2017-10-16 11:37:19.829] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:37:19.831] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:37:19.831] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 11:37:19 GMT+0530 (IST) <<<
+[32m[2017-10-16 11:37:19.832] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 11:37:19.832] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 11:37:19.832] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 11:37:19.832] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 11:37:19.832] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 11:37:19.833] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 11:37:19.833] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 11:37:19.834] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 11:37:19.834] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 11:37:19.840] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 11:37:19.840] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 11:37:19.840] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 11:37:19.841] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 11:37:21.156] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 11:37:21.163] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 11:37:21.163] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 11:37:21.165] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 11:37:21.165] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 11:37:21.170] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 11:37:21.171] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 11:37:21.260] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 11:37:21.275] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:37:21.275] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 11:37:21.550] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 11:37:21.563] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 11:37:21.563] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 11:37:21.564] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 11:37:21.567] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 11:37:21.568] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 11:37:21.852] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 11:37:21.866] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 11:37:21.867] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 11:37:21.871] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 11:37:21.872] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 11:37:24.000] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 11:37:24.001] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTMxNjkxLCJleHAiOjE1MDgxOTE2OTF9.WsofRPWBWPVnDatlUjZSUZtrM_EmE2MLRQ7l2k2RBTQ
+[32m[2017-10-16 11:37:24.005] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 11:37:24.010] [INFO] console - [39mreq.files.image{}
+[31m[2017-10-16 11:37:24.033] [ERROR] console - [39mTypeError: Cannot read property 'path' of undefined
+    at /home/manoj/alliance-service/routes.js:1436:39
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:50:53)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+[32m[2017-10-16 12:31:24.551] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 12:31:24.553] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 12:31:24.553] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 12:31:24 GMT+0530 (IST) <<<
+[32m[2017-10-16 12:31:24.554] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 12:31:24.554] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 12:31:24.554] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 12:31:24.554] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 12:31:24.554] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 12:31:24.554] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 12:31:24.555] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 12:31:24.555] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 12:31:24.556] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 12:31:24.566] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 12:31:24.566] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 12:31:24.568] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 12:31:24.568] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 12:31:26.398] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 12:31:26.404] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 12:31:26.405] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 12:31:26.405] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 12:31:26.406] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 12:31:26.409] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 12:31:26.410] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 12:31:26.499] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 12:31:26.509] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 12:31:26.510] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 12:31:26.832] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 12:31:26.843] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 12:31:26.844] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 12:31:26.844] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 12:31:26.849] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 12:31:26.849] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 12:31:27.205] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 12:31:27.215] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 12:31:27.216] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 12:31:27.219] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 12:31:27.219] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 13:43:48.506] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 13:43:48.514] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 13:43:48.515] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 13:43:48 GMT+0530 (IST) <<<
+[32m[2017-10-16 13:43:48.516] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 13:43:48.517] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 13:43:48.517] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 13:43:48.518] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 13:43:48.519] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 13:43:48.520] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 13:43:48.522] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 13:43:48.524] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 13:43:48.525] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 13:43:48.549] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 13:43:48.550] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 13:43:48.552] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 13:43:48.552] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 13:43:50.200] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 13:43:50.220] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 13:43:50.221] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 13:43:50.225] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 13:43:50.226] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 13:43:50.240] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 13:43:50.247] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 13:43:50.581] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 13:43:50.611] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 13:43:50.612] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 13:43:50.952] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 13:43:50.980] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 13:43:50.982] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 13:43:50.983] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 13:43:50.992] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 13:43:50.994] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 13:43:51.339] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 13:43:51.365] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 13:43:51.368] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 13:43:51.378] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 13:43:51.380] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 13:45:40.711] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 13:45:40.713] [INFO] console - [39marun.hossamani@rapidqube.com
+[32m[2017-10-16 13:45:40.715] [INFO] console - [39m123456
+[32m[2017-10-16 15:07:00.060] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:07:00.066] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:07:00.067] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 15:07:00 GMT+0530 (IST) <<<
+[32m[2017-10-16 15:07:00.069] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:07:00.069] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 15:07:00.069] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 15:07:00.070] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 15:07:00.071] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:07:00.072] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 15:07:00.074] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 15:07:00.076] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 15:07:00.077] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 15:07:00.097] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 15:07:00.098] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 15:07:00.100] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 15:07:00.101] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 15:07:01.663] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 15:07:01.676] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 15:07:01.677] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 15:07:01.680] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 15:07:01.707] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 15:07:01.721] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 15:07:01.729] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 15:07:01.973] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 15:07:02.000] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:07:02.000] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 15:07:02.369] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 15:07:02.392] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 15:07:02.393] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 15:07:02.394] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 15:07:02.399] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:07:02.399] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 15:07:02.723] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 15:07:02.745] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 15:07:02.747] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 15:07:02.752] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 15:07:02.754] [INFO] console - [39mserver is running on8082
+[31m[2017-10-16 15:13:59.420] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[32m[2017-10-16 15:29:07.830] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:29:07.837] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:29:07.838] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 15:29:07 GMT+0530 (IST) <<<
+[32m[2017-10-16 15:29:07.839] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:29:07.839] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 15:29:07.840] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 15:29:07.840] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 15:29:07.842] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:29:07.842] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 15:29:07.845] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 15:29:07.846] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 15:29:07.847] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 15:29:07.871] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 15:29:07.872] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 15:29:07.875] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 15:29:07.876] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 15:29:09.759] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 15:29:09.790] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 15:29:09.790] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 15:29:09.794] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 15:29:09.795] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 15:29:09.813] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 15:29:09.818] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 15:29:10.191] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 15:29:10.268] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:29:10.269] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 15:29:10.709] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 15:29:10.747] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 15:29:10.749] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 15:29:10.751] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 15:29:10.761] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:29:10.763] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 15:29:11.146] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 15:29:11.167] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 15:29:11.172] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 15:29:11.181] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 15:29:11.183] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 15:32:09.300] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 15:32:09.301] [INFO] console - [39mundefined
+[32m[2017-10-16 15:32:09.302] [INFO] console - [39mundefined
+[32m[2017-10-16 15:32:20.673] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 15:32:20.675] [INFO] console - [39mundefined
+[32m[2017-10-16 15:32:20.677] [INFO] console - [39mundefined
+[32m[2017-10-16 15:32:53.183] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 15:32:53.191] [INFO] console - [39marun.hossamani@rapidqube.com
+[32m[2017-10-16 15:32:53.193] [INFO] console - [39m123456
+[32m[2017-10-16 15:37:27.719] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:37:27.720] [INFO] console - [39m******************undefined
+[31m[2017-10-16 15:37:27.734] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 15:38:14.619] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:38:14.620] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTQ4MTg3LCJleHAiOjE1MDgyMDgxODd9.LpcJz7jjkPAGFm_utFIXqsbESjXv6PlArQGtkCVTvq4
+[32m[2017-10-16 15:38:14.640] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 15:38:14.663] [INFO] console - [39mreq.files.image{"file1":{"fieldName":"file1","originalFilename":"logo.png","path":"/tmp/sE1w_AmzV7OUL963qzPBc5Sa.png","headers":{"content-disposition":"form-data; name=\"file1\"; filename=\"logo.png\"","content-type":"image/png"},"size":6058,"name":"logo.png","type":"image/png"}}
+[31m[2017-10-16 15:38:14.668] [ERROR] console - [39mTypeError: Cannot read property 'path' of undefined
+    at /home/manoj/alliance-service/routes.js:1436:39
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 15:38:45.792] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:38:45.793] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTQ4MTg3LCJleHAiOjE1MDgyMDgxODd9.LpcJz7jjkPAGFm_utFIXqsbESjXv6PlArQGtkCVTvq4
+[32m[2017-10-16 15:38:45.796] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 15:38:45.800] [INFO] console - [39mreq.files.image{"file1":{"fieldName":"file1","originalFilename":"logo.png","path":"/tmp/hHo7Sg1ZiLhBmzTeIYuSvlNi.png","headers":{"content-disposition":"form-data; name=\"file1\"; filename=\"logo.png\"","content-type":"image/png"},"size":6058,"name":"logo.png","type":"image/png"}}
+[31m[2017-10-16 15:38:45.805] [ERROR] console - [39mTypeError: Cannot read property 'path' of undefined
+    at /home/manoj/alliance-service/routes.js:1436:39
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 15:39:36.415] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:39:36.416] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTQ4MTg3LCJleHAiOjE1MDgyMDgxODd9.LpcJz7jjkPAGFm_utFIXqsbESjXv6PlArQGtkCVTvq4
+[32m[2017-10-16 15:39:36.418] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 15:39:36.419] [INFO] console - [39mreq.files.image{"files":{"fieldName":"files","originalFilename":"logo.png","path":"/tmp/np3oEWRNwEYi2vzIO21JLawW.png","headers":{"content-disposition":"form-data; name=\"files\"; filename=\"logo.png\"","content-type":"image/png"},"size":6058,"name":"logo.png","type":"image/png"}}
+[31m[2017-10-16 15:39:36.423] [ERROR] console - [39mTypeError: Cannot read property 'path' of undefined
+    at /home/manoj/alliance-service/routes.js:1436:39
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 15:39:48.744] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:39:48.745] [INFO] console - [39m******************undefined
+[31m[2017-10-16 15:39:48.751] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 15:40:15.181] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:40:15.186] [INFO] console - [39m******************undefined
+[31m[2017-10-16 15:40:15.189] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 15:43:17.651] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:43:17.652] [INFO] console - [39m******************undefined
+[31m[2017-10-16 15:43:17.656] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 15:45:46.578] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 15:45:46.580] [INFO] console - [39mundefined
+[32m[2017-10-16 15:45:46.581] [INFO] console - [39mundefined
+[32m[2017-10-16 15:45:51.710] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 15:45:51.722] [INFO] console - [39mundefined
+[32m[2017-10-16 15:45:51.724] [INFO] console - [39mundefined
+[32m[2017-10-16 15:46:32.839] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 15:46:32.840] [INFO] console - [39marun.hossamani@rapidqube.com
+[32m[2017-10-16 15:46:32.841] [INFO] console - [39m123456
+[32m[2017-10-16 15:47:15.126] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:47:15.126] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTQ4OTk0LCJleHAiOjE1MDgyMDg5OTR9.8soK6KU7gAJSVkTdU_3NO-HoN7bsaE3K8dBrnuX1Wq0
+[32m[2017-10-16 15:47:15.130] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 15:47:15.133] [INFO] console - [39mreq.files.image{"file":{"fieldName":"file","originalFilename":"logo.png","path":"/tmp/b7IOgsTwuAz3EZkM2kLJ8GPU.png","headers":{"content-disposition":"form-data; name=\"file\"; filename=\"logo.png\"","content-type":"image/png"},"size":6058,"name":"logo.png","type":"image/png"}}
+[32m[2017-10-16 15:47:17.085] [INFO] console - [39m** file uploaded to Cloudinary service
+[32m[2017-10-16 15:47:18.778] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 15:47:18.790] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTQ4OTk0LCJleHAiOjE1MDgyMDg5OTR9.8soK6KU7gAJSVkTdU_3NO-HoN7bsaE3K8dBrnuX1Wq0
+[32m[2017-10-16 15:47:18.801] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 15:47:18.806] [INFO] console - [39mreq.files.image{"file":{"fieldName":"file","originalFilename":"logo.png","path":"/tmp/U1bnE9JzUsA2S8BF0JS3JT5E.png","headers":{"content-disposition":"form-data; name=\"file\"; filename=\"logo.png\"","content-type":"image/png"},"size":6058,"name":"logo.png","type":"image/png"}}
+[32m[2017-10-16 15:47:20.431] [INFO] console - [39m** file uploaded to Cloudinary service
+[32m[2017-10-16 15:50:40.186] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:50:40.194] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:50:40.197] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 15:50:40 GMT+0530 (IST) <<<
+[32m[2017-10-16 15:50:40.199] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:50:40.201] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 15:50:40.203] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 15:50:40.204] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 15:50:40.206] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:50:40.207] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 15:50:40.211] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 15:50:40.213] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 15:50:40.214] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 15:50:40.243] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 15:50:40.244] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 15:50:40.247] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 15:50:40.249] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 15:50:41.468] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 15:50:41.484] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 15:50:41.484] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 15:50:41.488] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 15:50:41.489] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 15:50:41.521] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 15:50:41.524] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 15:50:41.856] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 15:50:41.890] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:50:41.891] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 15:50:42.140] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 15:50:42.163] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 15:50:42.164] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 15:50:42.165] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 15:50:42.171] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:50:42.172] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 15:50:42.450] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 15:50:42.487] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 15:50:42.490] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 15:50:42.503] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 15:50:42.505] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 15:58:07.273] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:58:07.278] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:58:07.278] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 15:58:07 GMT+0530 (IST) <<<
+[32m[2017-10-16 15:58:07.279] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 15:58:07.279] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 15:58:07.280] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 15:58:07.280] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 15:58:07.281] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 15:58:07.281] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 15:58:07.283] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 15:58:07.284] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 15:58:07.284] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 15:58:07.299] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 15:58:07.300] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 15:58:07.301] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 15:58:07.301] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 15:58:08.436] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 15:58:08.469] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 15:58:08.479] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 15:58:08.483] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 15:58:08.484] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 15:58:08.503] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 15:58:08.512] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 15:58:08.942] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 15:58:08.987] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:58:08.988] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 15:58:09.271] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 15:58:09.292] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 15:58:09.293] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 15:58:09.293] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 15:58:09.299] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 15:58:09.299] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 15:58:09.575] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 15:58:09.593] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 15:58:09.595] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 15:58:09.600] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 15:58:09.602] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 16:21:37.138] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 16:21:37.139] [INFO] console - [39mundefined
+[32m[2017-10-16 16:21:37.140] [INFO] console - [39mundefined
+[32m[2017-10-16 16:21:38.560] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 16:21:38.560] [INFO] console - [39mundefined
+[32m[2017-10-16 16:21:38.562] [INFO] console - [39mundefined
+[32m[2017-10-16 16:21:56.114] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 16:21:56.114] [INFO] console - [39mundefined
+[32m[2017-10-16 16:21:56.115] [INFO] console - [39mundefined
+[32m[2017-10-16 16:21:56.404] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 16:21:56.405] [INFO] console - [39mundefined
+[32m[2017-10-16 16:21:56.405] [INFO] console - [39mundefined
+[32m[2017-10-16 16:22:16.791] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 16:22:16.794] [INFO] console - [39marun.hossamani@rapidqube.com
+[32m[2017-10-16 16:22:16.795] [INFO] console - [39m123456
+[32m[2017-10-16 16:25:45.950] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:25:45.951] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:25:45.965] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:26:29.276] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:26:29.281] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:26:29.288] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:26:38.163] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:26:38.170] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:26:38.176] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:26:50.155] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:26:50.155] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:26:50.161] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:27:00.919] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:27:00.919] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:27:00.930] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:27:14.757] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:27:14.764] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:27:14.768] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:27:23.956] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 16:27:23.958] [INFO] console - [39marun.hossamani@rapidqube.com
+[32m[2017-10-16 16:27:23.959] [INFO] console - [39m123456
+[32m[2017-10-16 16:28:00.790] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:28:00.792] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:28:00.800] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:42:27)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 16:28:01.090] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:28:01.093] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:28:01.104] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:42:27)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+[32m[2017-10-16 16:28:18.953] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:28:18.955] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:28:18.977] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:28:27.541] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:28:27.549] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:28:27.555] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:28:37.466] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:28:37.473] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:28:37.475] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:28:41.869] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:28:41.869] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:28:41.872] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:29:15.195] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:29:15.199] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:29:15.208] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:30:11.286] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 16:30:11.293] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 16:30:11.294] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 16:30:11 GMT+0530 (IST) <<<
+[32m[2017-10-16 16:30:11.295] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 16:30:11.296] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 16:30:11.296] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 16:30:11.296] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 16:30:11.297] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 16:30:11.298] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 16:30:11.300] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 16:30:11.301] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 16:30:11.302] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 16:30:11.330] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 16:30:11.330] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 16:30:11.332] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 16:30:11.332] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 16:30:12.198] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 16:30:12.212] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 16:30:12.213] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 16:30:12.216] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 16:30:12.217] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 16:30:12.228] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 16:30:12.236] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 16:30:12.500] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 16:30:12.531] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 16:30:12.532] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 16:30:12.736] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 16:30:12.772] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 16:30:12.773] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 16:30:12.774] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 16:30:12.781] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 16:30:12.781] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 16:30:13.044] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 16:30:13.069] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 16:30:13.071] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 16:30:13.082] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 16:30:13.084] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 16:30:19.758] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:30:19.761] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:30:19.783] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:30:40.845] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:30:40.846] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:30:40.857] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:31:26.669] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 16:31:26.698] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 16:31:26.700] [INFO] BlockchainSampleClient - [39m>>> BlockchainSampleClient env local, started Mon Oct 16 2017 16:31:26 GMT+0530 (IST) <<<
+[32m[2017-10-16 16:31:26.701] [INFO] BlockchainSampleClient - [39m-----------------------------------------------------------------------------
+[32m[2017-10-16 16:31:26.702] [INFO] BlockchainSampleClient - [39mNode started via(process.argv): /usr/bin/node,/home/manoj/alliance-service/app.js
+[32m[2017-10-16 16:31:26.702] [INFO] BlockchainSampleClient - [39mNode version: v6.11.4
+[32m[2017-10-16 16:31:26.709] [INFO] BlockchainSampleClient - [39mNode and its dependency versions: {"http_parser":"2.7.0","node":"6.11.4","v8":"5.1.281.108","uv":"1.11.0","zlib":"1.2.11","ares":"1.10.1-DEV","icu":"58.2","modules":"48","openssl":"1.0.2l"}
+[32m[2017-10-16 16:31:26.711] [INFO] BlockchainSampleClient - [39m
+[32m[2017-10-16 16:31:26.712] [INFO] loggingHelper - [39mCreated logger for app.js at level ALL
+[34m[2017-10-16 16:31:26.716] [TRACE] app.js - [39msetup : entry
+[34m[2017-10-16 16:31:26.718] [TRACE] datastore.js - [39minit : entry 
+[34m[2017-10-16 16:31:26.720] [TRACE] datastore.js - [39minit : params - {"name":"Cloudant NoSQL DB-vern","label":"cloudantNoSQLDB","plan":"Lite","credentials":{"username":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix","password":"22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22","host":"d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com","port":443,"url":"https://d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix:22ae2ced59306872b1f8240778fcf33bb77e7d4490350705c58f1e2eb8c3bb22@d4616de4-d4c6-4488-ab47-f6e0ef97a5ae-bluemix.cloudant.com"}} 
+[34m[2017-10-16 16:31:26.749] [TRACE] app.js - [39mgetCloudantKeyValStore : entry 
+[34m[2017-10-16 16:31:26.750] [TRACE] app.js - [39mgetCloudantKeyValStore : params - "devworks_app_master" 
+[34m[2017-10-16 16:31:26.753] [TRACE] datastore.js - [39mgetDbInstance : entry 
+[34m[2017-10-16 16:31:26.762] [TRACE] datastore.js - [39mgetDbInstance : params - "devworks_app_master" 
+[32m[2017-10-16 16:31:28.004] [INFO] datastore.js - [39mgetDbInstance : devworks_app_master already exists. - undefined
+[34m[2017-10-16 16:31:28.041] [TRACE] blockchain_network - [39msetupBlockchain : entry 
+[34m[2017-10-16 16:31:28.049] [TRACE] blockchain_network - [39msetupBlockchain : params - [Circular] 
+[34m[2017-10-16 16:31:28.058] [TRACE] blockchain_network - [39mchainInit : entry 
+[34m[2017-10-16 16:31:28.062] [TRACE] blockchain_network - [39mchainInit : params - [Circular] 
+[32m[2017-10-16 16:31:28.092] [INFO] blockchain_network - [39mchainInit : Chain Initialized - Chain {  peers: [],  securityEnabled: true,  members: {},  tcertBatchSize: 200,  devMode: false,  preFetchMode: true,  deployWaitTime: 100,  invokeWaitTime: 5,  name: 'sc_cc',  eventHub:    EventHub {     txCallback: [Function],     chaincodeRegistrants: HashTable {},     blockRegistrants: Set {},     txRegistrants: HashTable {},     ep: null,     connected: false },  keyValStore: CloudantKeyValStore { dbName: 'devworks_app_master', dbInstance: [Object] } }
+[32m[2017-10-16 16:31:28.109] [INFO] blockchain_network - [39mloadNetworkConfiguration : Successfully loaded network configuration - undefined
+[34m[2017-10-16 16:31:28.551] [TRACE] blockchain_network - [39mdoLogin : entry
+[34m[2017-10-16 16:31:28.608] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 16:31:28.611] [TRACE] kv_store_model - [39mget : params - {"id":"member.WebAppAdmin"} 
+[32m[2017-10-16 16:31:28.860] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.WebAppAdmin - undefined
+[32m[2017-10-16 16:31:28.957] [INFO] blockchain_network - [39mdoLogin : Successfully logged in user on blockchain: WebAppAdmin - undefined
+[32m[2017-10-16 16:31:28.960] [INFO] blockchain_network - [39mconfigureNetwork : Successfully enrolled registrar: WebAppAdmin - undefined
+[32m[2017-10-16 16:31:28.962] [INFO] blockchain_network - [39msetupBlockchain : blockchain setup complete - undefined
+[34m[2017-10-16 16:31:28.976] [TRACE] kv_store_model - [39mget : entry 
+[34m[2017-10-16 16:31:28.977] [TRACE] kv_store_model - [39mget : params - {"id":"member.risabh.s"} 
+[32m[2017-10-16 16:31:29.239] [INFO] kv_store_model - [39mget : successfully fetched member file with id member.risabh.s - undefined
+[32m[2017-10-16 16:31:29.319] [INFO] blockchain_sdk - [39mregisterUser : Successfully registered user on blockchain: risabh.s - undefined
+[34m[2017-10-16 16:31:29.323] [TRACE] blockchain_sdk - [39mdoLogin : entry
+[32m[2017-10-16 16:31:29.341] [INFO] blockchain_sdk - [39mdoLogin : Successfully logged in user on blockchain: risabh.s - undefined
+[32m[2017-10-16 16:31:29.345] [INFO] console - [39mserver is running on8082
+[32m[2017-10-16 16:32:40.778] [INFO] console - [39mentering login function in functions 
+[32m[2017-10-16 16:32:40.779] [INFO] console - [39marun.hossamani@rapidqube.com
+[32m[2017-10-16 16:32:40.779] [INFO] console - [39m123456
+[31m[2017-10-16 16:34:15.899] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[31m[2017-10-16 16:34:23.979] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[31m[2017-10-16 16:34:25.566] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[31m[2017-10-16 16:34:30.897] [ERROR] console - [39mError: content-type missing boundary
+    at Form.parse (/home/manoj/alliance-service/node_modules/multiparty/index.js:173:21)
+    at multipart (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:110:10)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Route.dispatch (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:112:3)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:281:22
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at Function.handle (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:174:3)
+    at router (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:47:12)
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at trim_prefix (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:317:13)
+    at /home/manoj/alliance-service/node_modules/express/lib/router/index.js:284:7
+    at Function.process_params (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:335:12)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/index.js:275:10)
+    at cors (/home/manoj/alliance-service/node_modules/cors/lib/index.js:188:7)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:224:17
+    at originCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:214:15)
+    at /home/manoj/alliance-service/node_modules/cors/lib/index.js:219:13
+    at optionsCallback (/home/manoj/alliance-service/node_modules/cors/lib/index.js:199:9)
+    at corsMiddleware (/home/manoj/alliance-service/node_modules/cors/lib/index.js:204:7)
+[32m[2017-10-16 16:34:37.989] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:34:37.990] [INFO] console - [39m******************undefined
+[31m[2017-10-16 16:34:37.996] [ERROR] console - [39mReferenceError: failed is not defined
+    at getUser (/home/manoj/alliance-service/routes.js:1531:20)
+    at /home/manoj/alliance-service/routes.js:1432:20
+    at Layer.handle [as handle_request] (/home/manoj/alliance-service/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/manoj/alliance-service/node_modules/express/lib/router/route.js:137:13)
+    at Form.<anonymous> (/home/manoj/alliance-service/node_modules/connect-multiparty/index.js:103:9)
+    at emitNone (events.js:86:13)
+    at Form.emit (events.js:185:7)
+    at /home/manoj/alliance-service/node_modules/multiparty/index.js:572:12
+    at _combinedTickCallback (internal/process/next_tick.js:73:7)
+    at process._tickCallback (internal/process/next_tick.js:104:9)
+[32m[2017-10-16 16:34:45.418] [INFO] console - [39m******************[object Object]
+[32m[2017-10-16 16:34:45.419] [INFO] console - [39m******************eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdGF0dXMiOjIwMCwibWVzc2FnZSI6IkxvZ2dlZCBpbiBzdWNjZXNzZnVsbHkiLCJ1c2VycyI6W3siX2lkIjoiNTllMWIyMWM3YTJkNzAwMDEyZDNhZjExIiwiZW1haWwiOiJhcnVuLmhvc3NhbWFuaUByYXBpZHF1YmUuY29tIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyYXBpZElEIjoiQndiTXdBNmIxSGhFMTQvdUxXcHlSV0txMzMrQVVCSDZ3elI2bUM4dDlKMD0iLCJ1c2VyT2JqZWN0Ijp7ImZuYW1lIjoiYXJ1biIsImxuYW1lIjoiSG9zc2FtYW5pICIsInBob25lIjoiOTE4MzY5OTY0NTgyIn0sInVzZXJ0eXBlIjoiRGlyZWN0IENsaWVudHMiLCJvdHAiOjMxOTMsImVuY29kZWRNYWlsIjoiWVhKMWJpNW9iM056WVcxaGJtbEFjbUZ3YVdSeGRXSmxMbU52YlE9PSIsImNyZWF0ZWRfYXQiOiJTYXQgT2N0IDE0IDIwMTcgMDY6NDM6NDAgR01UKzAwMDAgKFVUQykiLCJfX3YiOjAsInN0YXR1cyI6WyJwaG9uZSIsImVtYWlsIl19XSwiaWF0IjoxNTA4MTUxNzYyLCJleHAiOjE1MDgyMTE3NjJ9.xD-SPUXW_5dpqMJFtC3UKgqptZ8W8NxzybhQEQE37iQ
+[32m[2017-10-16 16:34:45.434] [INFO] console - [39midBwbMwA6b1HhE14/uLWpyRWKq33+AUBH6wzR6mC8t9J0=
+[32m[2017-10-16 16:34:45.446] [INFO] console - [39mreq.files.image{"file":{"fieldName":"file","originalFilename":"paymentgatewaysample.gif","path":"/tmp/UyvBpBJomN0DiAd_7SBFdN-P.gif","headers":{"content-disposition":"form-data; name=\"file\"; filename=\"paymentgatewaysample.gif\"","content-type":"image/gif"},"size":45370,"name":"paymentgatewaysample.gif","type":"image/gif"}}
+[32m[2017-10-16 16:34:49.207] [INFO] console - [39m** file uploaded to Cloudinary service
